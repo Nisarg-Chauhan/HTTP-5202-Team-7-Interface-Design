@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*,*:before, *:after{
+	box-sizing: border-box;
+}
+
+body{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Lato", sans-serif;	
+	background-color: #000;
+}
+
+nav{
+	width:100%;
+	background: #000;
+}
+
+nav .logo{
+	float: left;
+	color: white;
+	font-size: 27px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 60px;
+}
+
+nav span .red{
+	color: crimson;
+}
+
+nav .logo a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 35px;
+}
+
+nav .logo a:hover{
+	
+}
+
+nav .logo span{
+	color: crimson;
+}
+
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+}
+
+nav ul{
+	float: right;
+	list-style: none;
+	margin-right: 40px;
+	position: relative;
+}
+
+nav ul li{
+	float: left;
+	display: inline-block;
+	margin: 0 5px;
+	background: #000;
+}
+
+nav ul li a{
+	color: #fff;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 18px;
+	padding: 8px 15px;
+}
+
+nav ul li a:hover{
+	color: crimson;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #de2828,
+				0 0 5px #ed0505;
+}
+
+nav ul ul li a:hover{
+	color: crimson;
+	box-shadow: none;
+}
+
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	opacity: 0;
+	visibility: hidden;
+	transition: top .3s;
+}
+
+nav ul li:hover > ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li{
+	position: relative;
+	margin: 0px;
+	width: 200px;
+	float: none;
+	display: list-items;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+nav ul ul li a{
+	line-height: 50px;
+}
+
+.show,.icon, input{
+	display: none;
+}
+
+main .carousel-container{
+	width: 50%;
+	margin: auto;
+	border: 5px solid #000;
+	overflow: hidden;
+}
+
+.carousel-slide{
+	display: flex;
+	width: 100%;
+	height: 500px;
+	
+	
+}
+
+
+
+.carousel-container #prevBtn{
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	left: 5%;
+	font-size: 40px;
+	color: crimson;
+	cursor: pointer;
+}
+
+.carousel-container #nextBtn{
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	right: 5%;
+	font-size: 40px;
+	color: crimson;
+	cursor: pointer;
+}
+
+main .container2{
+	margin: 3.0em;
+}
+
+main .container2 h3{
+	font-weight: 700;
+	color: #b4e861;
+	text-align: left;
+	font-size: 64px;
+	margin-left: 0.7em;
+}
+
+main .container2 p{
+	text-align: left;
+	margin-left: 1em;
+	color: #fff;
+	font-size: 45px;
+}
+
+main .container2 p strong{
+	color: crimson;
+}
+
+footer{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 50px;
+	color: #fff;
+	background-color: #000;
+}
+
+.footer > *{
+	flex: 1 100%;
+}
+
+.footer-left{
+	margin-right: 1.25em;
+	margin-bottom: 2em;
+}
+
+h2{
+	font-weight: 600;
+	font-size: 17px;
+}
+
+.footer ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+.footer li{
+	line-height: 2em;
+}
+
+.footer a{
+	text-decoration: none;
+}
+
+.footer-right{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: row-wrap;
+}
+
+.footer-right > *{
+	flex: 1 50%;
+	margin-right: 1.25em;
+}
+
+.box a{
+	color: #fff;
+}
+
+.footer-bottom{
+	text-align: center;
+	color: #fff;
+	padding-top: 50px;
+}
+
+.footer-left p{
+	padding-right: 20%;
+	color: #fff;
+}
+
+.socials a{
+	background: #f70505;
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	margin-right: 10px;
+	border-radius: 2px;
+}
+
+.socials a i{
+	color: #e7f2f4;
+	padding: 10px 12px;
+	font-size: 20px;
+}
+
+@media all and (max-width: 968px){
+	nav ul{
+		margin-right: 0px;
+		float: left;
+	}
+	nav .logo{
+		padding-left: 30px;
+		width: 100%;
+	}
+	
+	nav ul li, nav ul ul li{
+		display: block;
+		width: 100%;
+	}
+	
+	nav ul ul {
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		opacity: 1;
+		visibility: visible;
+	}
+	
+	.show{
+		display: block;
+		color: white;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+	
+	.show:hover{
+		color: crimson;
+	}
+	
+	.icon{
+		display: block;
+		color: white;
+		position: absolute;
+		right: 40px;
+		line-height: 70px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	
+	nav ul li a:hover{ 
+		box-shadow: none; 
+	}
+	
+	.show + a, ul{
+		display: none;
+	}
+	[id^=btn]:checked + ul{
+		display: block;
+	}
+	
+}
+
+@media screen and (min-width: 600px){
+	.footer-right > *{
+		flex: 1;
+	}
+	.footer-left{
+		flex: 1;
+	}
+	.footer-right{
+		flex: 2 0px;
+	}
+}
+
+@media (max-width: 600px){
+	.footer{
+		padding: 15px;
+	}
+}

@@ -1,0 +1,44 @@
+.form-group {
+    width: 300px;
+
+}
+
+
+h2{
+    
+text-align: center;
+    
+}
+.container-login {
+    
+    padding-left: 40px;
+    background: #f2f2f2;
+    text-align: justify;
+}
+
+
+.button {
+  background-color: darkmagenta; 
+  border: 1 px solid black;
+  color: white;
+  margin: 15px 0 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+    
+    background-color: #ffffcc;
+    color: darkblue;
+  
+}
+
+
+.button a{
+    color: white;
+    text-decoration: none;
+}
