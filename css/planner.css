@@ -1,0 +1,48 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre&family=Noto+Sans:wght@400;700&family=Roboto&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Parisienne&family=Raleway&display=swap');
+
+/********Planner*/
+.planner,.testimonials{
+	background-color:white;
+	/* max-width:1200px; */
+	padding-bottom:5em;
+	padding-top:2em;
+	/*margin:0 auto;*/
+	color: black; 
+}
+.planner h1,.testimonials h1{
+	text-align:center;
+	font-family:'Parisienne','Lato', 'Raleway',sans-serif, cursive;
+	font-size:3em;
+	font-weight:bold;
+}
+.planner form{
+	
+}
+.planner label,.testimonials label{
+	margin-top:0.5em;
+	font-size:1.2em;
+	
+	/* color: white; */
+}
+.planner #submit,.testimonials #send{
+	margin-top:1em;
+}
+.planner legend{
+	margin-top:1em;
+	margin-bottom:0;
+	
+}
+
+
+.testimonials article{
+margin-bottom:1.5em;
+/* margin-left:0.05em; */
+background-color:white;
+color : black;
+/* margin-left:0; */
+margin-right:0.15em;
+border:1px solid red;
+}
+
