@@ -11,7 +11,7 @@
     </div>
     <div class="row justify-content-sm-center">
         
-        <div class="col col-sm-8 col-lg-6">
+        <div class="col col-sm-8 col-lg-4 d-flex justify-content-center">
             <form action="" method="POST" name="clientMessage">
                 <div class="form-group">
                     <label for="fname">First name</label>
