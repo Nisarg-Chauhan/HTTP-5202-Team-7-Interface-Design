@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/home_style.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="./css/planner.css">
+		<link rel="stylesheet" type="text/css" href="./css/login.css">
 		<!-- Jquery Bootstrap -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,7 +27,7 @@
 			</label>
 			<input type="checkbox" id="btn">
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a href="homepage.php">Home</a></li>
 				<li><a href="#">About</a></li>
 				<li>
 					<label for="btn-1" class="show">Planner +</label>

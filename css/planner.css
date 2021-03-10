@@ -10,6 +10,7 @@
 	padding-top:2em;
 	/*margin:0 auto;*/
 	color: black; 
+	
 }
 .planner h1,.testimonials h1{
 	text-align:center;
@@ -17,9 +18,7 @@
 	font-size:3em;
 	font-weight:bold;
 }
-.planner form{
-	
-}
+
 .planner label,.testimonials label{
 	margin-top:0.5em;
 	font-size:1.2em;
@@ -38,12 +37,12 @@
 
 
 .testimonials article{
-margin-bottom:1.5em;
-/* margin-left:0.05em; */
-background-color:white;
-color : black;
-/* margin-left:0; */
-margin-right:0.15em;
-border:1px solid red;
+	margin-bottom:1.5em;
+	/* margin-left:0.05em; */
+	background-color:white;
+	color : black;
+	/* margin-left:0; */
+	margin-right:0.15em;
+	border:1px solid red;
 }
 
