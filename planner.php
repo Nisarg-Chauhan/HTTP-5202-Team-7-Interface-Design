@@ -8,7 +8,7 @@
 	
 		<div class="col col-sm-8 col-lg-6">
 		
-			<form action="" method="POST" name="client-info">
+			<form action="" method="POST" name="clientInfo">
 				<fieldset>
 					<legend>Body information</legend>
 					<div class="form-group">
@@ -25,29 +25,14 @@
 					</div>
 					<div class="form-group">
 						<label for="body-fat">Body fat</label>
-						<input type="text" name="body-fat" id="body-fat" class="form-control" placeholder="Type your body fat"/>
+						<input type="text" name="bodyFat" id="body-fat" class="form-control" placeholder="Type your body fat"/>
 					</div>
 					<div class="form-group">
 						<label for="bmi">BMI</label>
 						<input type="text" name="bmi" id="bmi"  class="form-control" placeholder="Type your BMI"/>
 					</div>
 				</fieldset>
-				<fieldset>
-					<legend>Targeted goals</legend>
-					<div class="form-group">
-						<label for="target-weight">Targeted Weight</label>
-						<input type="text" name="target-weight" id="target-weight" class="form-control" placeholder="Type your weight target"/>
-					</div>
-					<div class="form-group">
-						<label for="target-fat">Targeted body fat</label>
-						<input type="text" name="target-fat" id="target-fat" class="form-control" placeholder="Type your target body fat"/>
-					</div>
-					<div class="form-group">
-						<label for="target-bmi">Targeted BMI</label>
-						<input type="text" name="target-bmi" id="target-bmi" class="form-control" placeholder="Type your target BMI"/>
-					</div>
-					<input type="text" name="submit" id="submit" class="btn btn-success float-right" value="Submit"/>
-				</fieldset>
+				<input type="submit" name="submit" id="submit" onclick="validatePlanner();" class="btn btn-success float-right" value="Submit"/>
 			</form>
 				
 		</div>

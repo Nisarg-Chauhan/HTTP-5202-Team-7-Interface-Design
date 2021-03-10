@@ -12,7 +12,7 @@
     <div class="row justify-content-sm-center">
         
         <div class="col col-sm-8 col-lg-6">
-            <form action="" method="POST" name="client-info">
+            <form action="" method="POST" name="clientMessage">
                 <div class="form-group">
                     <label for="fname">First name</label>
                     <input type="text" name="fname" id="fname" class="form-control" placeholder="Type your first name"/>
@@ -25,7 +25,7 @@
                     <label for="message">Your message</label>
                     <textarea name="message" id="message" class="form-control" placeholder="Type your message here"></textarea>
                 </div>
-                <input type="text" name="submit" id="send" class="btn btn-success float-right" value="Send"/>
+                <input type="submit" name="submit" id="send" onclick="validateTestimonials();" class="btn btn-success float-right" value="Send"/>
                 </form>
                 </div>
     </div>

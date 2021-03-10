@@ -30,6 +30,7 @@
 		</footer>
 		
 		<!-- JS file -->
-		<script src="./js/slider.js"></script>
+		<script src="./js/validation.js"></script>
+		<!--script src="./js/slider.js"></script-->
 		<!-- Bootstrap js file -->
 		<script src="./js/bootstrap.min.js"></script>

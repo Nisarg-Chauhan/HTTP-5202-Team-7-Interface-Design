@@ -5,7 +5,7 @@
 /********Planner*/
 .planner,.testimonials{
 	background-color:white;
-	/* max-width:1200px; */
+	max-width:100%;
 	padding-bottom:5em;
 	padding-top:2em;
 	/*margin:0 auto;*/
@@ -28,6 +28,7 @@
 }
 .planner #submit,.testimonials #send{
 	margin-top:1em;
+	width:150px;
 }
 .planner legend{
 	margin-top:1em;
