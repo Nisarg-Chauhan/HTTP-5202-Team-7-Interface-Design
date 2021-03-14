@@ -6,7 +6,7 @@
 	
 	<div class="row justify-content-sm-center"> 
 	
-		<div class="col col-md-8 col-lg-4 d-flex justify-content-center">
+		<div class="col col-md-8 col-lg-6 d-flex justify-content-sm-center">
 		
 			<form action="" method="POST" name="clientInfo">
 				<fieldset>
