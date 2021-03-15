@@ -14,6 +14,7 @@
                 <h5>John Doe</h5>
             </div>
         </article>
+        <a href="add-testimonials.php" class="col-lg-2">Add testimonials?</a>
     </div>
     </main>
     
