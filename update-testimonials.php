@@ -33,6 +33,7 @@
         </div>
         
         <input type="submit" id="submit" name="updateTestimonial"  class="offset-sm-4 offset-md-5 btn btn-primary float-right" value="Update"/>
+        <a href="testimonials.php" class="offset-1">List of testimonials</a>
     </form>
 </main>
 

@@ -57,7 +57,9 @@
         </div>
         
         <input type="submit" id="submit" name="deleteTestimonial" onclick="validateTestimonials();" class="offset-sm-4 offset-md-5 btn btn-danger float-right" value="Delete"/>
+        <a href="testimonials.php" class="offset-1">List of testimonials</a>
     </form>
+     
 </main>
 
 <?php include 'footer.php'; ?>

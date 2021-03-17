@@ -62,6 +62,7 @@
         </div>
         
         <input type="submit" name="addTestimonial" id="send" onclick="validateTestimonials();" class="offset-sm-4 offset-md-5 btn btn-success float-right" value="Send"/>
+        <a href="testimonials.php" class="offset-1">List of testimonials</a>
     </form>
 </main>
 
