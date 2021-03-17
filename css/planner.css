@@ -26,7 +26,7 @@
 	
 	/* color: white; */
 }
-.planner #submit,.testimonials #send{
+.planner #submit,.testimonials #send, .testimonials #submit{
 	margin-top:1em;
 	width:150px;
 }
@@ -38,11 +38,18 @@
 
 
 .testimonials article{
-	margin-bottom:1.5em;
+	padding-bottom:1.5em;
 	/* margin-left:0.05em; */
 	background-color:white;
 	color : black;
 	/* margin-left:0; */
 	margin-right:0.15em;
+	text-align:justify;
 }
-
+.testimonials h4, .testimonials h5 {
+	text-align:center;
+}
+.testimonial  img{
+	margin-left:47%;
+	max-width:100%;
+}

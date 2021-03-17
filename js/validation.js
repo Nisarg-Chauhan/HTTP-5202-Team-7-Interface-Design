@@ -56,27 +56,27 @@ function validatePlanner()
 function validateTestimonials()
 {
 	var testimonialsForm=document.forms.clientMessage;
-	var fname=testimonialsForm.fname;
-	var lname=testimonialsForm.lname;
+	var title=testimonialsForm.title;
+	var user=testimonialsForm.user;
 	var message=testimonialsForm.message;
 	
 	testimonialsForm.onsubmit=confirmMessage;
 	
 	function confirmMessage(){
-		if(fname.value==="" || fname.value===null){
-			fname.style.backgroundColor="red";
-			fname.focus();
+		if(title.value==="" || title.value===null){
+			title.style.backgroundColor="red";
+			title.focus();
 			return false;
 			} else {
-			fname.style.backgroundColor="white";
+			title.style.backgroundColor="white";
 		}
 		
-		if(lname.value==="" || lname.value===null){
-			lname.style.backgroundColor="red";
-			lname.focus();
+		if(user.value==="" || user.value===null){
+			user.style.backgroundColor="red";
+			user.focus();
 			return false;
 			} else {
-			lname.style.backgroundColor="white";
+			user.style.backgroundColor="white";
 		}
 		if(message.value==="" || message.value===null){
 			message.style.backgroundColor="red";
