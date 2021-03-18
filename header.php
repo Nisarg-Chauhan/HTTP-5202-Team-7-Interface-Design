@@ -9,11 +9,12 @@
 		<link rel="stylesheet" type="text/css" href="./css/home_style.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="./css/planner.css">
-		<link rel="stylesheet" type="text/css" href="./css/login.css">
+		
 		<!-- Jquery Bootstrap -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        
 		
 	</head>
     <body>
@@ -35,7 +36,7 @@
 					<input type="checkbox" id="btn-1" />  
 					<ul>
 						<li><a href="#">Diet Planner</a></li>
-						<li><a href="#">BMI Calculator</a></li>
+						<li><a href="bmi.php">BMI Calculator</a></li>
 						<li><a href="#">Performance</a></li>
 					</ul>
 				</li>
@@ -53,7 +54,7 @@
 					<a href="#">Contact</a>
 					<input type="checkbox" id="btn-3" />
 					<ul>
-						<li><a href="#">FAQ</a></li>
+						<li><a href="faq.php">FAQ</a></li>
 						<li><a href="testimonials.php">Testimonials</a></li>
 						<li><a href="#">Newsletters</a></li>
 					</ul>

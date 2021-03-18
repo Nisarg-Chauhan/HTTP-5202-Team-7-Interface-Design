@@ -8,6 +8,7 @@ html, body {
 
 .planner {
   min-height: 70%;
+
   margin-bottom: -50px;
 }
 
@@ -29,20 +30,25 @@ html, body {
 	text-align:center;
 	font-family:'Parisienne','Lato', 'Raleway',sans-serif, cursive;
 	font-size:3em;
-	
+	font-weight:bold;
 }
 
 .form-group {
     
-    width: 350px;
+    width: 500px;
+    display: inline-flex;
     margin: 1.5 em;
 }
 
 .form-group label{
     width: 100%;
+    padding: auto;
 }
 
 
+#output {
+    display: none;
+}
 
 .button {
   background-color: darkmagenta; 
@@ -73,5 +79,3 @@ html, body {
 .planner .button a:hover{
 color: darkblue;
 }
-
-

@@ -10,13 +10,13 @@
 			</div>
 			<ul class="footer-right">
 				<li>
-					<h2>Products</h2>
+					<h3>Products</h3>
 					<ul class="box">
 						<li><a href="#">Buy our Products</a></li>
 					</ul>
 				</li>
 				<li>
-					<h2>Contact Us</h2>
+					<h3>Contact Us</h3>
 					<ul class="box">
 						<li><a href="#">yourwellbeing001@gmail.com</a></li>
 						<li>Call us at - (866-305-5261)</li>

@@ -1,10 +1,12 @@
 <?php include 'header.php' ?>
 
-<main class="container-login">
-    <h2>Login</h2>
+<link rel="stylesheet" type="text/css" href="./css/login.css">
+
+<main class="container planner">
+    <h1>Login</h1>
     <div class="row justify-content-sm-center">
         <div class="col col-sm-8 col-lg-6">
-            <form>
+            <form action="" method="post">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email">
