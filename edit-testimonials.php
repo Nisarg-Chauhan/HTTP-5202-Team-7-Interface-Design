@@ -64,7 +64,7 @@
         
         <div class="form-group offset-sm-4 offset-md-5">
             <label for="message">Your message</label>
-            <textarea name="message" id="message"  class="form-control" placeholder="Type your message here"><?=$testimonial->message ?>"</textarea>
+            <textarea name="message" id="message"  class="form-control" placeholder="Type your message here"><?=$testimonial->message ?></textarea>
         </div>
         
         <div class="form-group offset-sm-4 offset-md-5">

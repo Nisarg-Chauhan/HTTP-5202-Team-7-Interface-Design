@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Parisienne&family=Raleway&display=swap');
 
 /********Planner*/
-.planner,.testimonials{
+.planner,.testimonials,.coach{
 	background-color:white;
 	max-width:100%;
 	padding-bottom:5em;
@@ -13,7 +13,7 @@
 	
 }
 
-.planner h1,.testimonials h1{
+.planner h1,.testimonials h1,.coach h1{
 	text-align:center;
 	font-family:'Parisienne','Lato', 'Raleway',sans-serif, cursive;
 	font-size:3em;
@@ -52,4 +52,27 @@
 .testimonial  img{
 	margin-left:47%;
 	max-width:100%;
+}
+.coach .pic img{
+max-width:100%;
+
+}
+/* .coach .pic{
+width:20%;
+padding-right:0;
+} */
+
+.coach .text{
+text-align:justify;
+}
+.coach .row{
+padding-bottom:1.5em;
+}
+.coach .row h2{
+margin-top:0.5em;
+margin-bottom:1em;
+color:red;
+}
+.coach .row:first-of-type{
+padding-top:2em;
 }

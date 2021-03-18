@@ -22,7 +22,16 @@
         $userId = $_POST['user'];
         
         $testimonial=new Testimonial();
-        $testimonial->addTestimonial($title, $message, $userId, $dbcon);
+        $count=$testimonial->addTestimonial($title, $message, $userId, $dbcon);
+        
+        
+        if($count){
+            
+            header("Location: testimonials.php");
+            }
+            else {
+                echo " problem adding the testimonial";
+            }
     }
     
 ?>

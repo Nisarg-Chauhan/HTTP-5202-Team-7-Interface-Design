@@ -29,18 +29,19 @@
                 </article>';
             }
         ?>
-        <div class="row justify-content-center">
-            <div class=" m-2 offset-lg-3 col-7 col-sm-3">
-                <a href="add-testimonials.php">Add testimonials?</a>
-            </div>
-            <div class="m-2 col-7 col-sm-3">
-                <a href="update-testimonials.php">Update testimonials?</a>
-            </div>
-            <div class="m-2 col-7 col-sm-3">
-                <a href="delete-testimonials.php">Delete testimonials?</a>
-            </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class=" m-2 offset-lg-3 col-7 col-sm-3">
+            <a href="add-testimonials.php">Add testimonials?</a>
+        </div>
+        <div class="m-2 col-7 col-sm-3">
+            <a href="update-testimonials.php">Update testimonials?</a>
+        </div>
+        <div class="m-2 col-7 col-sm-3">
+            <a href="delete-testimonials.php">Delete testimonials?</a>
         </div>
     </div>
+    
 </main>
 
 <?php include 'footer.php'; ?>
