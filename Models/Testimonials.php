@@ -26,7 +26,9 @@
         
         public function getAllTestimonials($dbcon){
             
-            $sql = "SELECT testimonials.id,title,message,user_id,first_name,last_name,profile_picture FROM testimonials JOIN users ON testimonials.user_id=users.id";
+            $sql = "SELECT testimonials.id,title,message,user_id,first_name,last_name,profile_picture 
+                    FROM testimonials JOIN users ON testimonials.user_id=users.id
+                    ORDER by testimonials.id";
             $statement = $dbcon->prepare($sql);
             $statement->execute();
             

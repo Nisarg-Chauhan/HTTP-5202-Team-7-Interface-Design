@@ -33,6 +33,7 @@
 .planner legend{
 	margin-top:1em;
 	margin-bottom:0;
+	/* text-align:center; */
 	
 }
 
@@ -54,25 +55,117 @@
 	max-width:100%;
 }
 .coach .pic img{
-max-width:100%;
-
+	max-width:100%;
+	
 }
 /* .coach .pic{
-width:20%;
-padding-right:0;
+	width:20%;
+	padding-right:0;
 } */
 
 .coach .text{
-text-align:justify;
+	text-align:justify;
 }
 .coach .row{
-padding-bottom:1.5em;
+	padding-bottom:1.5em;
 }
 .coach .row h2{
-margin-top:0.5em;
-margin-bottom:1em;
-color:red;
+	margin-top:0.5em;
+	margin-bottom:1em;
+	color:red;
 }
 .coach .row:first-of-type{
-padding-top:2em;
+	padding-top:2em;
+}
+
+.plan .row,.exercise .row, .plan form{
+	max-width:1200px;
+	margin:0 auto;
+}
+.exercise img{
+	width:96%;
+	margin-left:0.75em;
+	max-width:100%;
+	opacity:1;
+}
+.exercise img:hover{
+	border:3px solid white;
+}
+.exercise img:last-of-type{
+	height:90%;
+}
+.exercise .workout{
+	margin-top:2.5em;
+	
+}
+
+.plan h2{
+	text-align:center;
+	margin-bottom:1em;
+	font-size:2em;
+	margin-top:1em;
+	
+}
+.exercise .lose-weight,
+.exercise .strength,
+.exercise .cardio,
+.exercise .stretch{
+	position:relative;
+	padding:0;
+	
+}
+.exercise h1{
+	margin-bottom:1.25em;
+}
+.plan h1{
+	margin-bottom:0.5em;
+}
+.exercise p{
+	margin-bottom:1em;
+	font-size:1.5em;
+	text-align:justify;
+}
+.exercise span{
+	position:absolute;
+	bottom:15%;
+	left:10%;
+	font-size:1.75em;
+	color:red;
+}
+.plan .workout{
+position:relative;
+}
+.plan .workout table{
+	font-size:1.2em;
+	margin-bottom:2em;
+	/* position:absolute; */
+	/* top:80%; */
+	/* left:0%; */
+	/* background-color:lightgray; */
+	/* z-index:1000; */
+}
+.plan h3{
+	font-size:1.5em;
+	margin-bottom:1em;
+	text-align:center;
+}
+.plan h3:hover{
+color:red;
+}
+.plan .fat-loss thead{
+	background-color:red;
+}
+.plan .strength thead{
+	background-color:orange;
+}
+.plan .general thead{
+	background-color:green;
+}
+.planner a, .coach a,.testimonials a{
+	text-decoration:none;
+	font-size:1.25em;
+}
+
+.planner a:hover, .coach a:hover,.testimonials a:hover{
+	color:red;
 }

@@ -87,3 +87,7 @@ function validateTestimonials()
 		}
 	}
 }
+
+function hidetable(){
+	
+}

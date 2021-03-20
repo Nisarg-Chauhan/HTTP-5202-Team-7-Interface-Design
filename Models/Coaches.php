@@ -26,7 +26,8 @@
         
         public function getAllCoaches($dbcon){
             
-            $sql = "SELECT* FROM coaches";
+            $sql = "SELECT* FROM coaches
+                    ORDER by coaches.id";
             $statement = $dbcon->prepare($sql);
             $statement->execute();
             

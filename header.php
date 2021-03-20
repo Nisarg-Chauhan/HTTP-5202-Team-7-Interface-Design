@@ -36,7 +36,7 @@
 					<ul>
 					    <li><a href="coach-list.php">Expert Panel</a></li>
 						<li><a href="#">Diet Planner</a></li>
-						<li><a href="#">BMI Calculator</a></li>
+						<li><a href="bmi.php">BMI Calculator</a></li>
 						<li><a href="#">Performance</a></li>
 					</ul>
 				</li>
@@ -54,7 +54,7 @@
 					<a href="#">Contact</a>
 					<input type="checkbox" id="btn-3" />
 					<ul>
-						<li><a href="#">FAQ</a></li>
+						<li><a href="faq.php">FAQ</a></li>
 						<li><a href="testimonials.php">Testimonials</a></li>
 						<li><a href="#">Newsletters</a></li>
 					</ul>

@@ -22,7 +22,7 @@
 			$img = base64_encode($currentCoach->picture);
 			echo '
 			<div class="row m-3 justify-content-center"> 
-			<div class=" pic col-12 col-sm-2 col-lg-2">
+			<div class=" pic offset-1 col-11 col-sm-2 col-lg-2">
 			
 			<img src="data:image/jpg;base64,'.$img. '" alt="coach picture" /> 
 			
@@ -38,13 +38,13 @@
 	?>
 	
 	<div class="row justify-content-center">
-		<div class=" m-2 offset-lg-3 col-7 col-sm-3">
-			<a href="add-coach.php" class="offset-4">Add a new coach</a>
+		<div class=" m-2 offset-lg-3 offset-3  col-6 col-sm-3">
+			<a href="add-coach.php">Add a new coach</a>
 		</div>
-		<div class="m-2 col-7 col-sm-3">
+		<div class="m-2 offset-3  col-6 col-sm-3">
 			<a href="update-coach.php">Update a coach?</a>
 		</div>
-		<div class="m-2 col-7 col-sm-3">
+		<div class="m-2 offset-3  col-6 col-sm-3">
 			<a href="delete-coach.php">Delete a coach?</a>
 		</div>
 	</div>

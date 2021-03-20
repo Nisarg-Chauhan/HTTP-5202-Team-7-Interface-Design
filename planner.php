@@ -1,40 +1,41 @@
 <?php include 'header.php' ?>
 
-<main class="container planner">
+<main class="container planner exercise">
 	
-	<h1>Provide your information and we do the rest!</h1>
-			
-			<form action="" method="POST" name="clientInfo">
-				<fieldset>
-					<legend class="offset-sm-4 offset-md-5">Body information</legend>
-					<div class="form-group offset-sm-4 offset-md-5">
-						<label for="height">Height</label>
-						<input type="text" name="height" id="height" class="form-control" placeholder="Type your height in cm"/>
-					</div>
-					<div class="form-group offset-sm-4 offset-md-5">
-						<label for="weight">Weight</label>
-						<input type="text" name="weight" id="weight" class="form-control" placeholder="Type your weight in kg"/>
-					</div>
-					<div class="form-group offset-sm-4 offset-md-5">
-						<label for="waist">Waist</label>
-						<input type="text" name="waist" id="waist" class="form-control" placeholder="Type your waist in cm"/>
-					</div>
-					<div class="form-group offset-sm-4 offset-md-5">
-						<label for="body-fat">Body fat</label>
-						<input type="text" name="bodyFat" id="body-fat" class="form-control" placeholder="Type your body fat"/>
-					</div>
-					<div class="form-group offset-sm-4 offset-md-5">
-						<label for="bmi">BMI</label>
-						<input type="text" name="bmi" id="bmi"  class="form-control" placeholder="Type your BMI"/>
-					</div>
-				</fieldset>
-				<input type="submit" name="submit" id="submit" onclick="validatePlanner();" class="offset-sm-4 offset-md-5 btn btn-success float-right" value="Submit"/>
-			</form>
-				
+	<h1>Variety of proposed exercices </h1>
+	
+	<div class="row">
+		<div class="m-1 col-12 col-lg-12">
+			<p> Your Wellbeing proposes a set of set of exercises which 
+				will fulfill all your wellbeing needs covering weight loss,
+			cardio, strength to routine body form.</p>
 		</div>
+		<div class="col-12 col-sm-6 lose-weight">
+			<a href="#"><img src="images/jogging.jpg" alt="hello"/></a>
+			<span >Lose weight</span>
+		</div>
+		<div class="col-12 col-sm-6 strength">
+			<a href="#"><img src="images/strength.jpg" alt="hello"/></a>
+			<span>Tonify your body</span>
+		</div>
+		<div class="col-12 col-sm-6 stretch">
+			<a href="#"><img src="images/stretch.jpg" alt="hello"/></a>
+			<span>Maintain your form</span>
+		</div>
+		<div class="col-12 col-sm-6 cardio">
+			<a href="#"><img src="images/lose-weight.jpg" alt="hello"/></a>
+			<span id="cardio">Help your heart</span>
 			
-	</div>
+		</div>
 		
-</main>		
+	</div>
 	
-	<?php include 'footer.php'; ?>
+	<div class="row">
+		<div class="offset-lg-5 col-lg-5">
+			<a href="plan.php" class="btn btn-success"> Get custom plan!</a>
+		</div>
+	</div>
+	
+</main>		
+
+<?php include 'footer.php'; ?>

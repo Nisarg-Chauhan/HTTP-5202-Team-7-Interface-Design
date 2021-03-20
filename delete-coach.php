@@ -56,7 +56,7 @@
             </select>
         </div>
         
-        <input type="submit" id="submit" name="deleteCoach" onclick="validateTestimonials();" class="offset-sm-4 offset-md-5 btn btn-danger float-right" value="Delete"/>
+        <input type="submit" id="submit" name="deleteCoach" class="offset-sm-4 offset-md-5 btn btn-danger float-right" value="Delete"/>
         <a href="coach-list.php" class="offset-1">List of coaches</a>
     </form>
     
