@@ -2,15 +2,15 @@
 
 # Design of a fitness website in PHP
 
-* Planner feature --Static
+* Exercise Planner feature --Dynamic
 * Testimonials feature -- Dynamic
 * Coaches feature --Dynamic
-* Login feature --Static
+* Login feature --Dynamic
 * Faq feature -- Static
-* BMI feature -- Static
-* Product feature --Static
-* Diet Planner feature --Static
-* Performance feature  --Static
-* Payment feature --Static
+* BMI feature -- Dynamic
+* Product feature --Dynamic
+* Diet Planner feature --Dynamic
+* Performance feature  --Dynamic
+* Payment feature --Dynamic
 * Contact us feature --Static
 * Newsletter feature --Static
