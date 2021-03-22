@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Parisienne&family=Raleway&display=swap');
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.planner {
+  min-height: 70%;
+  margin-bottom: -50px;
+}
+
+.footer  {
+  height: 50px;
+}
+
+.planner{
+	background-color:white;
+	max-width:100%;
+	padding-bottom:5em;
+	padding-top:2em;
+	/*margin:0 auto;*/
+	color: black; 
+	
+}
+
+.planner h1{
+	text-align:center;
+	font-family:'Parisienne','Lato', 'Raleway',sans-serif, cursive;
+	font-size:3em;
+	
+}
+
+.form-group {
+    
+    width: 350px;
+    margin: 1.5 em;
+}
+
+.form-group label{
+    width: 100%;
+}
+
+
+
+.button {
+  background-color: darkmagenta; 
+  border: 1 px solid black;
+  color: white;
+  margin: 15px 0 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.button a {
+    
+    color: white;
+    text-decoration: none;
+  
+}
+.button:hover {
+    
+    color: darkblue;
+    background-color: coral;
+  
+}
+
+.planner .button a:hover{
+color: darkblue;
+}
