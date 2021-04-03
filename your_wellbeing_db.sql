@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 20 mars 2021 à 02:53
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.1
+-- Généré le : dim. 04 avr. 2021 à 00:03
+-- Version du serveur :  10.4.18-MariaDB
+-- Version de PHP : 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,18 +61,23 @@ CREATE TABLE `exercises` (
   `id` int(11) NOT NULL,
   `exercise_name` varchar(50) COLLATE latin1_bin NOT NULL,
   `exercise_description` text COLLATE latin1_bin NOT NULL,
-  `user_id` int(11) NOT NULL
+  `calorie_burnt` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 --
 -- Déchargement des données de la table `exercises`
 --
 
-INSERT INTO `exercises` (`id`, `exercise_name`, `exercise_description`, `user_id`) VALUES
-(1, 'Leg lift', 'This is an exercise intending to improve the blood circulation in the body.', 1),
-(2, 'Aerobics', 'This exercise is designed to warm up customers each time before starting other exercises.', 2),
-(3, 'Strength', 'This exercise helps in reducing body fat uplifting weights for a certain amount of time.', 2),
-(4, 'Biking', 'Biking allows customers to improve heart wellbeing and loss weight in a short time.', 3);
+INSERT INTO `exercises` (`id`, `exercise_name`, `exercise_description`, `calorie_burnt`) VALUES
+(1, 'Leg lift', 'This is an exercise intending to improve the blood circulation in the body.', '215.00'),
+(2, 'Aerobics', 'This exercise is designed to warm up customers each time before starting other exercises.', '565.00'),
+(3, 'Strength', 'This exercise helps in reducing body fat uplifting weights for a certain amount of time.', '600.00'),
+(4, 'Biking', 'Biking allows customers to improve heart wellbeing and loss weight in a short time.', '596.00'),
+(5, 'Full body', 'This is a general review concerning all the parts of the body.', '620.00'),
+(6, 'Cardio', 'Hello', '500.00'),
+(7, 'Fat loss', 'Lose your extra fat in 4 weeks.', '965.00'),
+(8, 'Yoga', 'Cure your body soul with tranquility', '120.00'),
+(9, 'Off', 'Rest day', '0.00');
 
 -- --------------------------------------------------------
 
@@ -255,19 +260,102 @@ INSERT INTO `workouts` (`id`, `workout_name`, `workout_description`, `calorie_bu
 
 CREATE TABLE `workouts_exercises` (
   `id` int(11) NOT NULL,
-  `exercise_id` int(11) NOT NULL,
-  `workout_id` int(11) NOT NULL
+  `week` int(11) NOT NULL,
+  `day` varchar(50) COLLATE latin1_bin NOT NULL,
+  `day_number` int(11) NOT NULL,
+  `exercise_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 --
 -- Déchargement des données de la table `workouts_exercises`
 --
 
-INSERT INTO `workouts_exercises` (`id`, `exercise_id`, `workout_id`) VALUES
-(1, 1, 2),
-(2, 2, 1),
-(3, 3, 2),
-(4, 4, 4);
+INSERT INTO `workouts_exercises` (`id`, `week`, `day`, `day_number`, `exercise_id`, `user_id`) VALUES
+(32, 1, 'Monday', 1, 2, 2),
+(33, 1, 'Tuesday', 2, 1, 2),
+(34, 1, 'Wednesday', 3, 2, 2),
+(35, 1, 'Thursday', 4, 3, 2),
+(36, 1, 'Friday', 5, 4, 2),
+(37, 1, 'Saturday', 6, 4, 2),
+(38, 1, 'Sunday', 7, 9, 2),
+(39, 2, 'Monday', 1, 2, 2),
+(40, 2, 'Tuesday', 2, 1, 2),
+(41, 2, 'Wednesday', 3, 3, 2),
+(42, 2, 'Thursday', 4, 3, 2),
+(43, 2, 'Friday', 5, 5, 2),
+(44, 2, 'Saturday', 6, 4, 2),
+(45, 2, 'Sunday', 7, 9, 2),
+(46, 3, 'Monday', 1, 2, 2),
+(47, 3, 'Tuesday', 2, 1, 2),
+(48, 3, 'Wednesday', 3, 3, 2),
+(49, 3, 'Thursday', 4, 3, 2),
+(50, 3, 'Friday', 5, 5, 2),
+(51, 3, 'Saturday', 6, 4, 2),
+(52, 3, 'Sunday', 7, 9, 2),
+(53, 4, 'Monday', 1, 2, 2),
+(54, 4, 'Tuesday', 2, 1, 2),
+(55, 4, 'Wednesday', 3, 3, 2),
+(56, 4, 'Thursday', 4, 4, 2),
+(57, 4, 'Friday', 5, 5, 2),
+(58, 4, 'Saturday', 6, 4, 2),
+(59, 4, 'Sunday', 7, 9, 2),
+(60, 1, 'Monday', 1, 3, 4),
+(61, 1, 'Tuesday', 2, 7, 4),
+(62, 1, 'Wednesday', 3, 5, 4),
+(63, 1, 'Thursday', 4, 1, 4),
+(64, 1, 'Friday', 5, 6, 4),
+(65, 1, 'Saturday', 6, 4, 4),
+(66, 1, 'Sunday', 7, 9, 4),
+(67, 2, 'Monday', 1, 3, 4),
+(68, 2, 'Tuesday', 2, 7, 4),
+(69, 2, 'Wednesday', 3, 5, 4),
+(70, 2, 'Thursday', 4, 1, 4),
+(71, 2, 'Friday', 5, 6, 4),
+(72, 2, 'Saturday', 6, 4, 4),
+(73, 2, 'Sunday', 7, 9, 4),
+(74, 3, 'Monday', 1, 4, 4),
+(75, 3, 'Tuesday', 2, 7, 4),
+(76, 3, 'Wednesday', 3, 6, 4),
+(77, 3, 'Thursday', 4, 1, 4),
+(78, 3, 'Friday', 5, 6, 4),
+(79, 3, 'Saturday', 6, 5, 4),
+(80, 3, 'Sunday', 7, 9, 4),
+(81, 4, 'Monday', 1, 4, 4),
+(82, 4, 'Tuesday', 2, 8, 4),
+(83, 4, 'Wednesday', 3, 6, 4),
+(84, 4, 'Thursday', 4, 1, 4),
+(85, 4, 'Friday', 5, 6, 4),
+(86, 4, 'Saturday', 6, 5, 4),
+(87, 4, 'Sunday', 7, 9, 4),
+(88, 1, 'Monday', 1, 5, 3),
+(89, 1, 'Tuesday', 2, 2, 3),
+(90, 1, 'Wednesday', 3, 4, 3),
+(91, 1, 'Thursday', 4, 3, 3),
+(92, 1, 'Friday', 5, 4, 3),
+(93, 1, 'Saturday', 6, 1, 3),
+(94, 1, 'Sunday', 7, 9, 3),
+(95, 2, 'Monday', 1, 5, 3),
+(96, 2, 'Tuesday', 2, 3, 3),
+(97, 2, 'Wednesday', 3, 5, 3),
+(98, 2, 'Thursday', 4, 4, 3),
+(99, 2, 'Friday', 5, 5, 3),
+(100, 2, 'Saturday', 6, 1, 3),
+(101, 2, 'Sunday', 7, 9, 3),
+(102, 3, 'Monday', 1, 6, 3),
+(103, 3, 'Tuesday', 2, 3, 3),
+(104, 3, 'Wednesday', 3, 5, 3),
+(105, 3, 'Thursday', 4, 4, 3),
+(106, 3, 'Friday', 5, 5, 3),
+(107, 3, 'Saturday', 6, 1, 3),
+(108, 3, 'Sunday', 7, 9, 3),
+(109, 4, 'Monday', 1, 6, 3),
+(110, 4, 'Tuesday', 2, 3, 3),
+(111, 4, 'Wednesday', 3, 5, 3),
+(112, 4, 'Thursday', 4, 4, 3),
+(113, 4, 'Friday', 5, 5, 3),
+(114, 4, 'Saturday', 6, 1, 3),
+(115, 4, 'Sunday', 7, 9, 3);
 
 --
 -- Index pour les tables déchargées
@@ -283,8 +371,7 @@ ALTER TABLE `coaches`
 -- Index pour la table `exercises`
 --
 ALTER TABLE `exercises`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `orders`
@@ -341,7 +428,7 @@ ALTER TABLE `workouts`
 ALTER TABLE `workouts_exercises`
   ADD PRIMARY KEY (`id`),
   ADD KEY `exercise_id` (`exercise_id`),
-  ADD KEY `workout_id` (`workout_id`);
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -357,7 +444,7 @@ ALTER TABLE `coaches`
 -- AUTO_INCREMENT pour la table `exercises`
 --
 ALTER TABLE `exercises`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `orders`
@@ -405,17 +492,11 @@ ALTER TABLE `workouts`
 -- AUTO_INCREMENT pour la table `workouts_exercises`
 --
 ALTER TABLE `workouts_exercises`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=394;
 
 --
 -- Contraintes pour les tables déchargées
 --
-
---
--- Contraintes pour la table `exercises`
---
-ALTER TABLE `exercises`
-  ADD CONSTRAINT `exercises_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `orders`
@@ -453,8 +534,8 @@ ALTER TABLE `workouts`
 -- Contraintes pour la table `workouts_exercises`
 --
 ALTER TABLE `workouts_exercises`
-  ADD CONSTRAINT `workouts_exercises_ibfk_1` FOREIGN KEY (`exercise_id`) REFERENCES `exercises` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `workouts_exercises_ibfk_2` FOREIGN KEY (`workout_id`) REFERENCES `workouts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `workouts_exercises_ibfk_1` FOREIGN KEY (`exercise_id`) REFERENCES `exercises` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `workouts_exercises_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
