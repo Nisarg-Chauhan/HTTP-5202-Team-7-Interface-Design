@@ -4,7 +4,7 @@
 
 * Exercise Planner feature    --Dynamic CRUD done
 * Testimonials feature        --Dynamic CRUD done
-* Coaches feature             --Dynamic CRUD done
+* Coach advices feature       --Dynamic CRUD done
 
 * Login feature               --Dynamic CRUD almost done
 * Faq feature                 --Dynamic CRUD almost done
