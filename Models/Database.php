@@ -6,9 +6,9 @@
     class Database
     {
         //Properties required for the connection to the database
-        private static $userName = 'root';    //Username
-        private static $passWord = '';        //Password
-        private static $dsn = 'mysql:host=localhost;dbname=your_wellbeing_db'; //Data source
+        private static $userName = 'habmcs45_Nodir';    //Username
+        private static $passWord = 'y+!#?ST3~TYO';        //Password
+        private static $dsn = 'mysql:host=192.99.199.128; dbname=habmcs45_PHP_Project'; //Data source
         private static $dbcon;
         
         private function __construct()
@@ -32,7 +32,7 @@
                     
                     } catch (PDOException $e) {
                     $msg = $e->getMessage();
-                    include '../custom-error.php';
+                    include 'custom-error.php';
                     exit();
                 }
             }
