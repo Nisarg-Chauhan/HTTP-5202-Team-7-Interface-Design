@@ -1,20 +1,30 @@
 <?php include 'header.php';
-   
-  $weight = $_POST['weight'];
-  $height = $_POST['height'];
-  $message = "";
+    session_start();
 
-function calculate() 
+    $message = "";
+  
+
+/*function calculate() 
 {
   
   echo  $GLOBALS['message'] = round($GLOBALS['weight'] / pow(($GLOBALS['height']/'100'),2),2);        
 
-} 
+} */
 
 
 if(isset($_POST['submit']))
+    
 {
-    calculate();
+   $weight = $_POST['weight'];
+    $height = $_POST['height'];
+    
+    //calculate();
+    
+    $message = round($weight / pow(($height/100),2),2);
+    
+    $_SESSION['your_weight'] = $weight;
+    $_SESSION['your_height'] = $height;
+    $_SESSION['your_bmi'] = $message;
     
 } 
  
@@ -33,23 +43,28 @@ if(isset($_POST['submit']))
                 <div class="form-group">
                     <label for="height">Enter your height:</label>
                     <input type="number" class="form-control" name="height" id="height" placeholder="Enter your height">
-                    <select>    
-                        <option value="metres" selected="selected">metres</option>
-                        <option value="inches">inches</option>
+                    <select class="data" name="heightunits" id="heightunits">    
+                        <option class="option" value="metres" selected="selected">metres</option>
+                        <option class="option" value="inches">inches</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="weight">Enter your weight:</label>
                     <input type="number" class="form-control"  name="weight" id="weight" placeholder="Enter your weight">
-                    <select type="multiple" id="weightunits">
+                    <select class="data" name="weightunits" id="weightunits">
                         <option value="kg" selected="selected">kilograms</option>
                         <option value="lb">pounds</option>
                     </select>
                 </div>
                 <button type="submit" name="submit" class="button">Calculate</button>
                 <div>
-                    <h4> Your BMI is: <?php echo $GLOBALS['message'] ?> </h4>
-                </div>  
+                    <h4 class="bmi-result"> Your BMI is: <?php  echo $message; ?> </h4>
+                </div> 
+                 <?php 
+          
+          if(isset($_SESSION['login'])){
+              echo '<p style="float:left;"><a href="personal.php">Go Back</a></p>';
+          } ?>
             </form>
             
         </div>

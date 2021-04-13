@@ -1,56 +1,72 @@
-<?php include 'header.php';
-    
+<?php 
 
+
+include 'header.php';
+
+require_once 'Models/Database.php';
+require_once 'Models/users.php';
+  
 if(isset($_POST['register'])){
+    
+    session_start();
+    
+    $_SESSION['first_name'] = $_POST['fname'];
+    $_SESSION['last_name'] = $_POST['lname'];
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['age'] = $_POST['age'];
 
-    $email =  $_POST['email'];
-    $first_name = $_POST['name'];
-    $last_name = $_POST['lname'];
-    $phone_number = $_POST['phone'];
+
+
+    $pass_err = $email_err = $fname_err = $lname_err = $age_err = "";
+    $fname = $email = $lname = $age = $password = "";
     
-    $password = $_POST['pwd'] ?? '';
-    
-    if (@$_POST['pwd'] == null){
-    $password = "Please choose valid password";
+      
+    if ($_POST['pwd'] == ""){
+    $pass_error = "Please choose valid password";
 } else {
-        $password = "Valid option";
+        $password = $_POST['pwd'];
     }
     
-    if($email == ""){
-        $emailerr =  " please enter email";
+    if($_POST['email'] == ""){
+        $email_err =  " please enter email";
     } else if (!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)){
-        $emailerr =  " please enter valid email";
+        $email_err =  " please enter valid email";
     } else {
-        $emailerr =  "valid email";
+        $email = $_POST['email'];
     }
 
-   if($first_name == ""){
-        $name_err =  " please enter name";
-    } else if (is_numeric($first_name)){
-        $name_err =  " please enter valid name";
+   if($_POST['fname'] == ""){
+        $fname_err =  " please enter name";
+    } else if (is_numeric($fname)){
+        $fname_err =  "please enter valid name";
     } else {
-        $name_err =  "valid name";
+        $fname = $_POST['fname'];
     }
     
-    if($last_name == ""){
+    if($_POST['lname'] == ""){
         $lname_err =  " please enter last name";
-    } else if (is_numeric($last_name)){
+    } else if (is_numeric($lname)){
         $lname_err =  " please enter valid last name";
     } else {
-        $lname_err =  "valid last name";
+        $lname =  $_POST['lname'];
     }
     
-    
-    if($phone_number == ""){
-        $phone_err =  " please enter phone number";
-    } else if (!is_numeric($phone_number)){
-        $phone_err =  " please enter valid phone number";
-    } else {
-        $phone_err =  "valid phone number";
+    if($_POST['age'] == ""){
+        $age_err =  "please enter your age";
+    }  else {
+        $age =  $_POST['age'];
     }
+    
+
+   if($fname && $lname && $email && $password && $age){
+       header ("Location: welcome.php");
+   }
+    
+    $dbcon=Database::getDb();
+    $user=new User();
+	$c=$user->addUser($fname, $lname, $email, $password, $age, $dbcon);
 
 }
-
 
 ?>
 
@@ -60,37 +76,37 @@ if(isset($_POST['register'])){
     <h1>Registration</h1>
     <div class="row justify-content-sm-center">
         <div class="col col-sm-8 col-lg-6">
-            <form action="welcome.php" method="post">
+            <form action="" method="post">
                 <p>Please fill in this form to create an account.</p>                     
                 <div class="form-group">
-                    <label for="fname"><b>First Name</b></label>
-                    <input type="text" class="form-control" placeholder="Enter first name" name="fname" id="fname" value="<?= isset($first_name) ? $first_name : ''; ?>" required>
-                    <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($name_err)? $name_err: ''; ?> </span>
+                    <label for="fname"><b>First name</b></label>
+                    <input type="text" class="form-control" placeholder="Enter first name" name="fname" id="fname" >
+                    <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($fname_err)? $fname_err: ''; ?> </span>
                 </div>            
                 <div class="form-group">
                     <label for="lname"><b>Last name </b></label>
-                    <input type="text" class="form-control" placeholder="Enter last name" name="lname" id="lname" required value="<?= isset($last_name) ? last_name : ''; ?>">
+                    <input type="text" class="form-control" placeholder="Enter last name" name="lname" id="lname" >
                     <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($lname_err)? $lname_err: ''; ?> </span>
-                </div>              
-                <div class="form-group">
-                    <label for="email"><b>Email</b></label>
-                    <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" required value="<?= isset($email) ? $email : ''; ?>">
-                    <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($emailerr)? $emailerr: ''; ?> </span>
                 </div>
                 <div class="form-group">
-                    <label for="phone"><b>Phone Number</b></label>
-                    <input type="number" class="form-control" placeholder="Enter Phone number" name="phone" id="phone" required value="<?= isset($phone_number) ? $phone_number : ''; ?>">
-                    <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($phone_err)? $phone_err: ''; ?> </span>
+                    <label for="age"><b>Age </b></label>
+                    <input type="number" class="form-control" placeholder="Enter age" name="age" id="age" >
+                    <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($age_err)? $age_err: ''; ?> </span>
+                </div> 
+                <div class="form-group">
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" >
+                    <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($email_err)? $email_err: ''; ?> </span>
                 </div>
                 <div class="form-group">
                     <label for="pwd"><b>Password</b></label>
-                    <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd" required value="<?= isset($password) ? $password : ''; ?>">
-                    <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($password)? $password: ''; ?> </span>
+                    <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd" >
+                    <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($pass_error)? $pass_error: ''; ?> </span>
                 </div>
                 <div class="form-group">
                     <label for="pwd_repeat"><b>Confirm Password</b></label>
-                    <input type="password" class="form-control" placeholder="Confirm Password" id="pwd_repeat" required value="<?= isset($password) ? $password : ''; ?>">
-                     <span style="color:red; font-zise: 8px; background:#f2f2f2;"><?= isset($password)? $password: ''; ?> </span>
+                    <input type="password" class="form-control" placeholder="Confirm Password" id="pwd_repeat" >
+                     <span style="color:red; font-zise: 8px; background:#f2f2f2;"> <?= isset($pass_error)? $pass_error: ''; ?></span>
                 </div>    
                 <button type="submit" class="button" name="register">Register</button>          
                 <div class="container signin">
