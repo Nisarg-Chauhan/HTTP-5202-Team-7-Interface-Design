@@ -2,6 +2,8 @@
     
     class Faq
     {
+
+         //Get Faq by ID
             
         public function getFaqById($id, $db){
             
@@ -12,7 +14,7 @@
             return $statement->fetch(PDO::FETCH_OBJ);
         }
         
-                
+            //Get all FAQ
         public function getAllFaqs($dbcon){
             
             $sql = "SELECT * FROM faq";
