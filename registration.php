@@ -60,11 +60,18 @@ if(isset($_POST['register'])){
 
    if($fname && $lname && $email && $password && $age){
        header ("Location: welcome.php");
-   }
-    
-    $dbcon=Database::getDb();
+     $dbcon=Database::getDb();
     $user=new User();
 	$c=$user->addUser($fname, $lname, $email, $password, $age, $dbcon);
+   }
+
+ /*if(!$fname == "" && $lname == "" && $email == "" && $password == "" && $age == ""){
+     $dbcon=Database::getDb();
+    $user=new User();
+	$c=$user->addUser($fname, $lname, $email, $password, $age, $dbcon);
+   }*/
+    
+   
 
 }
 
