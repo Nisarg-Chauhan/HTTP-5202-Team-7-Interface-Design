@@ -9,7 +9,7 @@ require_once 'Models/users.php';
 if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $username = $_POST['email'];  
+      $username = md5($_POST['email']);  
       $password = $_POST['pwd']; 
       $dbcon=Database::getDb();
       $message_err = "";

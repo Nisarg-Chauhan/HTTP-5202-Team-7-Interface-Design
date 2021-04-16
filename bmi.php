@@ -15,7 +15,7 @@
 if(isset($_POST['submit']))
     
 {
-   $weight = $_POST['weight'];
+    $weight = $_POST['weight'];
     $height = $_POST['height'];
     
     //calculate();
