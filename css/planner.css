@@ -78,7 +78,7 @@
 	padding-top:2em;
 }
 
-.row,.planner .row,.exercise .row, .planner form{
+.row,.planner .row,.exercise .row,.coach .row, .planner form{
 	max-width:1200px;
 	margin:0 auto;
 }
