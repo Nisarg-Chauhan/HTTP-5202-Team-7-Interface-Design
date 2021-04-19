@@ -21,13 +21,13 @@
 			
 			$img = base64_encode($currentCoach->picture);
 			echo '
-			<div class="row m-2 justify-content-sm-center"> 
-			<div class=" pic col-11 col-sm-2 col-lg-2">
+			<div class="row justify-content-sm-center"> 
+			<div class=" pic col-11 col-sm-2">
 			
 			<img src="data:image/jpg;base64,'.$img. '" alt="coach picture" /> 
 			
 			</div>
-			<div class="text col-12 col-sm-6 col-lg-6">
+			<div class="text col-12 col-sm-6">
 			
 			<h2> Hello, I am '.$currentCoach->first_name.' '.$currentCoach->last_name.' </h2>
 			<p>'.$currentCoach->advice. '</p>

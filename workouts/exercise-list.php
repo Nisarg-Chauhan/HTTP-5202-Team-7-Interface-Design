@@ -20,15 +20,15 @@
 		foreach($exercises as $currentExer){
 			
 			echo '
-			<div class="row m-3 justify-content-sm-center"> 
-			<div class="col-11 col-sm-2 col-lg-1">
+			<div class="row justify-content-sm-center"> 
+			<div class="col-11 col-sm-1">
 			<p>'.$currentExer->exercise_name. '</p>
 			</div>
-			<div class="text col-12 col-sm-4 col-lg-6">
+			<div class="text col-12 col-sm-6">
 			<p>'.$currentExer->exercise_description. '</p>
 			
 			</div>
-			<div class="text col-12 col-sm-2 col-lg-2">
+			<div class="text col-12 col-sm-3">
 			<p>'.$currentExer->calorie_burnt. ' g calorie burnt</p>
 			
 			</div>

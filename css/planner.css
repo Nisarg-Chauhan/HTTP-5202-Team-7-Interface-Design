@@ -164,3 +164,6 @@ color:red;
 .planner a:hover, .coach a:hover,.testimonials a:hover{
 	color:red;
 }
+.planner p{
+	text-align:center;
+}
