@@ -1,10 +1,10 @@
 <?php 
 
 
-include 'header.php';
+include '../header.php';
 
-require_once 'Models/Database.php';
-require_once 'Models/users.php';
+require_once '../Models/Database.php';
+require_once '../Models/users.php';
 
 
 
@@ -137,4 +137,4 @@ if(isset($_POST['register'])){
         </div>
     </div>
 </main>
-<?php include 'footer.php'; ?>
+<?php include '../footer.php'; ?>

@@ -1,10 +1,10 @@
 <?php 
 
-include 'header.php' ;
+include '../header.php' ;
 session_start();
 
-require_once 'Models/Database.php';
-require_once 'Models/users.php';
+require_once '../Models/Database.php';
+require_once '../Models/users.php';
   
 if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    }
 ?>
     
-<link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
 
 <main class="container planner">
     <div class="planner-content">
@@ -62,4 +62,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </main>
 
-<?php include 'footer.php'  ?>
+<?php include '../footer.php'  ?>
