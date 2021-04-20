@@ -50,7 +50,7 @@
                 last_name = :lname,
                 email = :email,
                 password = :password,
-                age = :age,
+                age = :age
             WHERE id = :id";
             
             $statement =  $db->prepare($sql);

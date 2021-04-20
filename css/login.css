@@ -4,7 +4,7 @@
 html, body {
   height: 100%;
   margin: 0;
-}
+ }
 
 .planner {
   min-height: 70%;
@@ -15,15 +15,31 @@ html, body {
   height: 50px;
 }
 
+
+
+
+
 .planner{
-	background-color:white;
+    
+	
+    content: ' ';
+    display: block;
+   
 	max-width:100%;
 	padding-bottom:5em;
 	padding-top:2em;
 	/*margin:0 auto;*/
 	color: black; 
-	
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    background-image: url(../images/transparent.png);
+  
+
 }
+
+
 
 .planner h1{
 	text-align:center;
@@ -42,7 +58,10 @@ html, body {
     width: 100%;
 }
 
-
+.planner:after {
+    content: "";
+    clear: both;
+}
 
 .button {
   background-color: darkmagenta; 
@@ -55,6 +74,7 @@ html, body {
   font-size: 18px;
   border-radius: 12px;
   transition-duration: 0.4s;
+    
 }
 
 .button a {

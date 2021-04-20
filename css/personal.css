@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Parisienne&family=Raleway&display=swap');
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+ 
+}
+
+.container-personal {
+    display: flex;
+    place-content: center;
+    background-color: #f2f2f2;
+    max-height: auto;
+    margin-left: 0;
+}
+
+.column-left{
+    padding-top: 50px; 
+    float: left;
+   
+   
+}
+.column-left ul{
+    list-style-type: none;
+    
+    
+    
+}
+
+.column-left ul li{
+    width: 150px;
+    border: 0.5px dotted blue;
+    padding: 5px;
+    background-color: chartreuse;
+    color: red;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
+}
+.column-left ul li:hover{
+    background-color: blue;
+    font-size: 18px;
+    color: white;
+    box-shadow: 6px 6px 6px 3px lightgreen;
+    
+    
+}
+
+.column-left ul li a{
+    text-decoration: none;
+}
+.column-left ul li a:hover{
+    color: white;
+    
+}
+
+form{
+    display: grid;
+    place-content: center;
+}
+input{
+    margin: 0;
+}
+
+
+.footer  {
+  height: 50px;
+}
+
+
+
+.form-group {
+    
+    width: 500px;
+    display: inline-flex;
+    margin: 1.5 em;
+}
+
+
+
+.button {
+  background-color: darkmagenta; 
+  border: 1 px solid black;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+  width: 100%;
+
+}
+
+.button a {
+    
+    color: white;
+    text-decoration: none;
+  }
+
+
+
+.button:hover {
+    
+    color: darkblue;
+    background-color: coral;
+  
+}
+
+.planner .button a:hover{
+color: darkblue;
+}

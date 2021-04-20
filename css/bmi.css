@@ -6,24 +6,18 @@ html, body {
   margin: 0;
 }
 
-.planner {
-  min-height: 70%;
 
-  margin-bottom: -50px;
-}
 
-.footer  {
-  height: 50px;
-}
+
 
 .planner{
 	background-color:white;
 	max-width:100%;
-	padding-bottom:5em;
-	padding-top:2em;
+	position: relative;
+    padding: 2em 6em 5em 6em;
 	/*margin:0 auto;*/
-	color: black; 
-	
+	color: black;
+    background-image: url();
 }
 
 .planner h1{
@@ -33,6 +27,15 @@ html, body {
 	font-weight:bold;
 }
 
+#check{
+    text-align: center;
+}
+
+form{
+    padding: 1em 1em 0 1em;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
 .form-group {
     
     width: 500px;
@@ -41,8 +44,8 @@ html, body {
 }
 
 .form-group label{
-    width: 100%;
-    padding: auto;
+    
+   width: 50%;
 }
 
 

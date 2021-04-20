@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 04 avr. 2021 à 00:03
+-- Généré le : mer. 14 avr. 2021 à 19:24
 -- Version du serveur :  10.4.18-MariaDB
 -- Version de PHP : 8.0.3
 
@@ -355,7 +355,35 @@ INSERT INTO `workouts_exercises` (`id`, `week`, `day`, `day_number`, `exercise_i
 (112, 4, 'Thursday', 4, 4, 3),
 (113, 4, 'Friday', 5, 5, 3),
 (114, 4, 'Saturday', 6, 1, 3),
-(115, 4, 'Sunday', 7, 9, 3);
+(115, 4, 'Sunday', 7, 9, 3),
+(394, 1, 'Monday', 1, 9, 1),
+(395, 1, 'Tuesday', 2, 3, 1),
+(396, 1, 'Wednesday', 3, 5, 1),
+(397, 1, 'Thursday', 4, 3, 1),
+(398, 1, 'Friday', 5, 4, 1),
+(399, 1, 'Saturday', 6, 5, 1),
+(400, 1, 'Sunday', 7, 9, 1),
+(401, 2, 'Monday', 1, 9, 1),
+(402, 2, 'Tuesday', 2, 4, 1),
+(403, 2, 'Wednesday', 3, 5, 1),
+(404, 2, 'Thursday', 4, 3, 1),
+(405, 2, 'Friday', 5, 4, 1),
+(406, 2, 'Saturday', 6, 5, 1),
+(407, 2, 'Sunday', 7, 9, 1),
+(408, 3, 'Monday', 1, 9, 1),
+(409, 3, 'Tuesday', 2, 4, 1),
+(410, 3, 'Wednesday', 3, 6, 1),
+(411, 3, 'Thursday', 4, 3, 1),
+(412, 3, 'Friday', 5, 4, 1),
+(413, 3, 'Saturday', 6, 5, 1),
+(414, 3, 'Sunday', 7, 9, 1),
+(415, 4, 'Monday', 1, 9, 1),
+(416, 4, 'Tuesday', 2, 4, 1),
+(417, 4, 'Wednesday', 3, 6, 1),
+(418, 4, 'Thursday', 4, 3, 1),
+(419, 4, 'Friday', 5, 4, 1),
+(420, 4, 'Saturday', 6, 5, 1),
+(421, 4, 'Sunday', 7, 9, 1);
 
 --
 -- Index pour les tables déchargées
@@ -492,7 +520,7 @@ ALTER TABLE `workouts`
 -- AUTO_INCREMENT pour la table `workouts_exercises`
 --
 ALTER TABLE `workouts_exercises`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=394;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=422;
 
 --
 -- Contraintes pour les tables déchargées
