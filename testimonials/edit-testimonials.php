@@ -3,18 +3,20 @@
     include '../header.php';
     require_once '../Models/Database.php';
     require_once '../Models/Testimonials.php';
-    require_once '../Models/users.php';
+    //require_once '../Models/users.php';
     
+    session_start();
     $dbcon = Database::getDb();
     $test = new Testimonial();
     if(isset($_SESSION['login'])){
-        if(strtolower($_SESSION['role'])=='admin'){
         
+        if(strtolower($_SESSION['role'])=='admin'){
+            
             $users =  $test->getAllUsers($dbcon);
-        } else {
+            } else {
             $users =  $test->getUserById($_SESSION['userId'],$dbcon);
         }
-    } else {
+        } else {
         header("location:../login/login.php");
     }
     //foreach ($users as $user){        
@@ -26,11 +28,11 @@
     
     if(isset($_POST['updateTestimonial'])){
         
-    //Getting the data received from the form
-    $testId = $_POST['testimonial'];
-    
-    $test=new Testimonial();
-    $testimonial=$test->getTestimonialById($testId, $dbcon);
+        //Getting the data received from the form
+        $testId = $_POST['testimonial'];
+        
+        $test=new Testimonial();
+        $testimonial=$test->getTestimonialById($testId, $dbcon);
     }
 ?>
 
@@ -81,14 +83,18 @@
             <label for="user">User</label>
             <select name="user" id="user" class="form-select">
                 <?php
-					//Populating the dropdown list using associative arrays
-					//Array containing all the options
 					//$selectOptions=$users;
-					foreach ($users as $user){
-                        //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
-						echo '<option value="'.$user->id.'" '.(($user->id==$testimonial->user_id)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
+                    if(strtolower($_SESSION['role'])=='admin'){
+                    
+                        foreach ($users as $user){
+                            //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
+                            echo '<option value="'.$user->id.'" '.(($user->id==$testimonial->user_id)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
+                        }
+                    } else {
+                        
+                        echo '<option value="'.$users->id.'" '.(($users->id==$testimonial->user_id)? 'selected':'').">".$users->first_name.' '.$users->last_name."</option>";
                     }
-					//End of options insertion
+					
                 ?>
             </select>
         </div>

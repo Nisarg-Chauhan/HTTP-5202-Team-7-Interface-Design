@@ -2,8 +2,18 @@
     include '../header.php'; 
     require_once '../Models/Database.php';
     require_once '../Models/Workouts.php';
-    
-	$userId=1;
+	
+	session_start();
+	
+	if(isset($_SESSION['login'])){
+	
+	  $userId=$_SESSION['userId'];
+	  
+	} else {
+	
+        header("location:../login/login.php");
+    }
+	
     $dbcon = Database::getDb();
     $workout = new Workout();
     $workouts =  $workout->getUserWorkout($dbcon,$userId);

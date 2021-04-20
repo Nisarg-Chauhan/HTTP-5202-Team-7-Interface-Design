@@ -1,9 +1,15 @@
 <?php 
     
-   // include 'header.php';
+    include '../header.php';
     require_once '../Models/Database.php';
     require_once '../Models/Coaches.php';
     
+    session_start();
+    
+    if(!isset($_SESSION['login']) || strtolower($_SESSION['role'])!='admin'){
+
+        header("location:../login/login.php");
+    }
     $dbcon = Database::getDb();
     
      if(isset($_POST['updateCoach'])){

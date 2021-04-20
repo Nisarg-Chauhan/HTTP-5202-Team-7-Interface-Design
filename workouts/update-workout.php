@@ -4,7 +4,16 @@
     require_once '../Models/Workouts.php';
     require_once '../Models/Exercises.php';
 	
-	$userId=1;
+	session_start();
+	if(isset($_SESSION['login'])){
+		
+	  $userId=$_SESSION['userId'];
+	  
+	} else {
+	
+        header("location:../login/login.php");
+    }
+	
     $dbcon = Database::getDb();
 	$exo=new Exercise();
 	$exercises=$exo->getAllExercises($dbcon);

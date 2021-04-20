@@ -14,7 +14,7 @@
         if(strtolower($_SESSION['role'])=='admin'){
             $testimonials =  $test->getAllTestimonials($dbcon);
         } else{
-            $testimonials =  $test->getUserTestimonials($_SESSION['userId'], $dbcon);
+             $testimonials =  $test->getUserTestimonials($_SESSION['userId'], $dbcon);
         }
     } else {
         header("location:../login/login.php");

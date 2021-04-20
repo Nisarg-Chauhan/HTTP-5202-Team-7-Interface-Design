@@ -3,6 +3,13 @@
 	require_once '../Models/Database.php';
 	require_once '../Models/Coaches.php';
 	
+	session_start();
+	
+	if(!isset($_SESSION['login']) || strtolower($_SESSION['role'])!='admin'){
+
+        header("location:../login/login.php");
+    }
+	
 	if(isset($_POST['addCoach'])){
 	 
 		$fname=$_POST['first_name'];

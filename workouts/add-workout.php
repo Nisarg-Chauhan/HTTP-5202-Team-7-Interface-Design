@@ -3,10 +3,21 @@
 	require_once '../Models/Database.php';
 	require_once '../Models/Workouts.php';
 	require_once '../Models/Exercises.php';
+	
+	session_start();
+	
+	if(isset($_SESSION['login'])){
+	
+	  $user_id=$_SESSION['userId'];
+	} else {
+
+        header("location:../login/login.php");
+    }
+	
 	$dbcon=Database::getDb();
     $exo=new Exercise();
 	$exercises=$exo->getAllExercises($dbcon);
-	$user_id=1;
+	
 	//var_dump($exercises);
 	
 	$restDay=9;// Default Off
@@ -93,7 +104,9 @@
 <main class="container planner">
 	
 	<h1>Add a plan</h1>
-	<p>All our programs are four weeks long and customers have 1 hour per day. Discover more about our <a href="exercise-list.php"> exercises</a></p>
+	<p>All our programs are four weeks long and customers have 1 hour per day.<br/> 
+	 Please, select four exercises for each day to get your plan.
+		To learn more about our exercises,<a href="exercise-list.php"> click here.</a></p>
 	<form  action="" method="POST" name="workoutInfo">
 		
 		<div class="form-group offset-sm-4 offset-md-5">

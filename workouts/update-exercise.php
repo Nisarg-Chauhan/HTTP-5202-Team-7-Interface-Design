@@ -4,13 +4,20 @@
     require_once '../Models/Database.php';
     require_once '../Models/Exercises.php';
     
+    session_start();
+	
+	if(!isset($_SESSION['login']) || strtolower($_SESSION['role'])!='admin'){
+
+        header("location:../login/login.php");
+    }
+    
     $dbcon = Database::getDb();
     $test = new Exercise();
     $exers =  $test->getAllExercises($dbcon);
 ?>
 
 <main class="container coach">
-        
+    
         <h1>Update an exercise</h1>
         
         <form action="edit-exercise.php" method="POST" name="coachInfo">

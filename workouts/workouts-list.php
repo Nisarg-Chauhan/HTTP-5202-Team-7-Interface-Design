@@ -3,9 +3,25 @@
     require_once '../Models/Database.php';
     require_once '../Models/Workouts.php';
     
-    $dbcon = Database::getDb();
+	$dbcon = Database::getDb();
     $workout = new Workout();
-    $workouts =  $workout->getAllWorkouts($dbcon);
+	
+	session_start();
+	
+	if(isset($_SESSION['login'])){
+	
+		if(strtolower($_SESSION['role'])=='admin'){
+			$workouts =  $workout->getAllWorkouts($dbcon);
+		}else{
+			$userId=$_SESSION['userId'];
+			$workouts =  $workout->getUserWorkout($dbcon,$userId);
+		} 
+		
+	} else {
+		
+        header("location:../login/login.php");
+	}
+	
     
 ?>
 
@@ -28,7 +44,7 @@
 				
 				$calories=0;
 				for($val=0;$val<28;$val++){
-				
+					
 					if($workouts[$val+$k*$nbWeek*$weekDays]!=""){
 						$calories+=$workouts[$val+$k*$nbWeek*$weekDays]->calorie_burnt;
 					}

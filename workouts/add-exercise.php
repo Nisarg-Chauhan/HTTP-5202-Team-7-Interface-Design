@@ -3,9 +3,16 @@
 	require_once '../Models/Database.php';
 	require_once '../Models/Exercises.php';
 	
+	session_start();
+	
+	if(!isset($_SESSION['login']) || strtolower($_SESSION['role'])!='admin'){
+
+        header("location:../login/login.php");
+    }
+	
 	if(isset($_POST['addExercise'])){
 	 
-		$exName=$_POST['ex_name'];
+	 $exName=$_POST['ex_name'];
 		$exDescription=$_POST['ex_description'];
 		$calorie=$_POST['calorie'];
 		
