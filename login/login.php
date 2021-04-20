@@ -1,16 +1,16 @@
 <?php 
 
-include '../header.php' ;
+include 'header.php' ;
 session_start();
 
-require_once '../Models/Database.php';
-require_once '../Models/users.php';
+require_once 'Models/Database.php';
+require_once 'Models/users.php';
   
 if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $username = md5($_POST['email']);  
-      $password = $_POST['pwd']; 
+      $username = $_POST['email'];  
+      $password = md5($_POST['pwd']); 
       $dbcon=Database::getDb();
       $message_err = "";
       
@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           
          $_SESSION['login'] = $_POST['email'];          
          header("location: personal.php");
-      }else {
+      } else {
          $message_err = "Username or Password not valid";
       }
    }
@@ -36,6 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <link rel="stylesheet" type="text/css" href="./css/login.css">
 
 <main class="container planner">
+    <div class="planner-content">
     <h1>Login</h1>
     <div class="row justify-content-sm-center">
         <div class="col col-sm-8 col-lg-6">
@@ -58,6 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </div>
+    </div>
 </main>
 
-<?php include '../footer.php'  ?>
+<?php include 'footer.php'  ?>

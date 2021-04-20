@@ -1,11 +1,13 @@
 <?php 
 
 
-include '../header.php';
+include 'header.php';
 
-require_once '../Models/Database.php';
-require_once '../Models/users.php';
-  
+require_once 'Models/Database.php';
+require_once 'Models/users.php';
+
+
+
 if(isset($_POST['register'])){
     
     session_start();
@@ -22,9 +24,20 @@ if(isset($_POST['register'])){
     
       
     if ($_POST['pwd'] == ""){
-    $pass_error = "Please choose valid password";
-} else {
-        $password = $_POST['pwd'];
+        $pass_error = "Please choose valid password"; 
+    }
+    
+    if ($_POST['pwd_repeat'] == ""){
+        $pass_error_repeat = "Please choose valid password";
+    }
+    
+    
+    if ($_POST['pwd'] === $_POST['pwd_repeat']) {
+        
+        $password = md5($_POST['pwd']);
+        
+    } else {
+        $pass_error_repeat = "Passwords are not matching";
     }
     
     if($_POST['email'] == ""){
@@ -58,18 +71,19 @@ if(isset($_POST['register'])){
     }
     
 
-   if($fname && $lname && $email && $password && $age){
+   /*if($fname && $lname && $email && $password && $age){
        header ("Location: welcome.php");
      $dbcon=Database::getDb();
     $user=new User();
 	$c=$user->addUser($fname, $lname, $email, $password, $age, $dbcon);
-   }
+   }*/
 
- /*if(!$fname == "" && $lname == "" && $email == "" && $password == "" && $age == ""){
+ if(!$fname == "" && !$lname == "" && !$email == "" && !$password == "" && !$age == ""){
+     header ("Location: welcome.php");
      $dbcon=Database::getDb();
     $user=new User();
 	$c=$user->addUser($fname, $lname, $email, $password, $age, $dbcon);
-   }*/
+   }
     
    
 
@@ -79,7 +93,7 @@ if(isset($_POST['register'])){
 
 <link rel="stylesheet" type="text/css" href="./css/login.css">
 
-<main class="container planner">
+<main class="container planner" style="background-image: url(); background-color: white;">
     <h1>Registration</h1>
     <div class="row justify-content-sm-center">
         <div class="col col-sm-8 col-lg-6">
@@ -112,8 +126,8 @@ if(isset($_POST['register'])){
                 </div>
                 <div class="form-group">
                     <label for="pwd_repeat"><b>Confirm Password</b></label>
-                    <input type="password" class="form-control" placeholder="Confirm Password" id="pwd_repeat" >
-                     <span style="color:red; font-zise: 8px; background:#f2f2f2;"> <?= isset($pass_error)? $pass_error: ''; ?></span>
+                    <input type="password" name="pwd_repeat" class="form-control" placeholder="Confirm Password" id="pwd_repeat" >
+                     <span style="color:red; font-zise: 8px; background:#f2f2f2;"> <?= isset($pass_error_repeat)? $pass_error_repeat: ''; ?></span>
                 </div>    
                 <button type="submit" class="button" name="register">Register</button>          
                 <div class="container signin">
@@ -123,4 +137,4 @@ if(isset($_POST['register'])){
         </div>
     </div>
 </main>
-<?php include '../footer.php'; ?>
+<?php include 'footer.php'; ?>
