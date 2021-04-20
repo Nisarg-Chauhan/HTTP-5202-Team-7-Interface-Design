@@ -2,7 +2,7 @@
     
     class Testimonial
     {
-        public function getUserTestimonials($db, $userId){
+        public function getUserTestimonials($userId,$db){
             
             $query = "SELECT testimonials.*,first_name,last_name 
             FROM testimonials JOIN users ON testimonials.user_id = users.id 
@@ -44,6 +44,18 @@
             
             $users = $statement->fetchAll(PDO::FETCH_OBJ);
             return $users;
+        }
+        
+        public function getUserById($id,$dbcon){
+            
+            $sql = "SELECT * FROM users WHERE id=:id";
+            $statement = $dbcon->prepare($sql);
+            
+            $statement->bindParam(':id', $id);
+            $statement->execute();
+            
+            $user = $statement->fetch(PDO::FETCH_OBJ);
+            return $user;
         }
         
         public function addTestimonial($title, $message, $userId, $db)

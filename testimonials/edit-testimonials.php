@@ -3,29 +3,39 @@
     include '../header.php';
     require_once '../Models/Database.php';
     require_once '../Models/Testimonials.php';
+    require_once '../Models/users.php';
     
     $dbcon = Database::getDb();
     $test = new Testimonial();
-    $users =  $test->getAllUsers($dbcon);
+    if(isset($_SESSION['login'])){
+        if(strtolower($_SESSION['role'])=='admin'){
+        
+            $users =  $test->getAllUsers($dbcon);
+        } else {
+            $users =  $test->getUserById($_SESSION['userId'],$dbcon);
+        }
+    } else {
+        header("location:../login/login.php");
+    }
     //foreach ($users as $user){        
     //    echo $user->first_name.' and '.$user->id;
     //}
 ?>
 
 <?php
-
+    
     if(isset($_POST['updateTestimonial'])){
         
-        //Getting the data received from the form
-        $testId = $_POST['testimonial'];
-        
-        $test=new Testimonial();
-        $testimonial=$test->getTestimonialById($testId, $dbcon);
+    //Getting the data received from the form
+    $testId = $_POST['testimonial'];
+    
+    $test=new Testimonial();
+    $testimonial=$test->getTestimonialById($testId, $dbcon);
     }
 ?>
 
 <?php
-
+    
     if(isset($_POST['editTestimonial'])){
         
         //Getting the data received from the form
@@ -43,9 +53,9 @@
             header("Location: testimonials.php");
         }
         else {
-                echo " problem updating the testimonial";
+            echo " problem updating the testimonial";
         }
-            
+        
     }
 ?>
 
@@ -57,8 +67,8 @@
     <form action="" method="POST" name="clientMessage">
         <input type="hidden" name="tid" value="<?= $testId; ?>" />
         <div class="form-group offset-sm-4 offset-md-5">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="<?=$testimonial->title ?>" class="form-control" placeholder="Type your first name"/>
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="<?=$testimonial->title ?>" class="form-control" placeholder="Type your first name"/>
         </div>
         
         

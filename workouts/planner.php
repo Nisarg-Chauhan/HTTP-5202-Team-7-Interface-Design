@@ -36,7 +36,7 @@
 		<div class="workout fat-loss table-responsive col-lg-12">
 			
 			<h3>Four week weight loss program</h3>
-			<table class="table table-striped">
+			<table class="base-table table table-striped">
 				
 				<thead >
 					<tr>
@@ -97,7 +97,7 @@
 		
 		<div class="workout strength table-responsive col-lg-12">
 			<h3>Four week strength program</h3>
-			<table class="table table-striped">
+			<table class="base-table table table-striped">
 				
 				
 				<thead >
@@ -160,7 +160,7 @@
 		<div class="workout general table-responsive col-lg-12">
 			<h3>Four week general program</h3>
 			
-			<table class="table table-striped">
+			<table class="base-table table table-striped">
 				
 				<thead >
 					<tr>

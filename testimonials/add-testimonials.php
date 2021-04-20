@@ -4,12 +4,21 @@
     require_once '../Models/Database.php';
     require_once '../Models/Testimonials.php';
     
+    session_start();
+    
     $dbcon = Database::getDb();
     $test = new Testimonial();
-    $users =  $test->getAllUsers($dbcon);
-    //foreach ($users as $user){        
-    //    echo $user->first_name.' and '.$user->id;
-    //}
+    
+    if(isset($_SESSION['login'])){
+        if(strtolower($_SESSION['role'])=='admin'){
+        
+            $users =  $test->getAllUsers($dbcon);
+        } else {
+            $users =  $test->getUserById($_SESSION['userId'],$dbcon);
+        }
+    } else {
+        header("location:../login/login.php");
+    }
 ?>
 
 <?php

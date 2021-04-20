@@ -21,14 +21,17 @@
             return $count;
         }
         
-       public function getUser($dbcon){
+       public function getCurrentUser($email,$password,$dbcon){
             
-            $sql = "SELECT * FROM users where ";
+            $sql = "SELECT * FROM users WHERE email=:email AND password=:password";
             $statement = $dbcon->prepare($sql);
+            
+            $statement->bindParam(':email', $email);
+            $statement->bindParam(':password', $password);
             $statement->execute();
             
-            $exercises = $statement->fetchAll(PDO::FETCH_OBJ);
-            return $exercises;
+            $user = $statement->fetch(PDO::FETCH_OBJ);
+            return $user;
         }
         
         

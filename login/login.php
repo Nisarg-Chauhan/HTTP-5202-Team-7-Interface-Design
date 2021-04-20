@@ -5,6 +5,7 @@ session_start();
 
 require_once '../Models/Database.php';
 require_once '../Models/users.php';
+//require_once '../Models/Testimonials.php';
   
 if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
@@ -16,27 +17,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       
       
     
-     $sql = "SELECT * FROM users WHERE email = '$username' and password = '$password'";
-     $statement = $dbcon->prepare($sql);
-     $statement->execute();
-     $count = $statement->rowCount();
+     // $sql = "SELECT * FROM users WHERE email = '$username' and password = '$password'";
+     // $statement = $dbcon->prepare($sql);
+     // $statement->execute();
+     // $count = $statement->rowCount();
+     $newUser=new User();
+     
+     $user=$newUser->getCurrentUser($username,$password,$dbcon);
             
       // If result matched $username and $password, table row must be 1 row
 		
-      if($count == 1) {
+      // if($count == 1) {
+      if(isset($user) && $user!="") {
           
-         $_SESSION['login'] = $_POST['email'];          
-         header("location: personal.php");
-      } else {
+         $_SESSION['login'] = $_POST['email']; 
+         $_SESSION['userId']=$user->id;
+         $_SESSION['role']=$user->role;
+         
+         header("location:../homepage/homepage.php");
+      }else {
          $message_err = "Username or Password not valid";
       }
    }
 ?>
     
-<link rel="stylesheet" type="text/css" href="../css/login.css">
+<!--link rel="stylesheet" type="text/css" href="./css/login.css"-->
 
 <main class="container planner">
-    <div class="planner-content">
     <h1>Login</h1>
     <div class="row justify-content-sm-center">
         <div class="col col-sm-8 col-lg-6">
@@ -59,7 +66,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </div>
-    </div>
 </main>
-
 <?php include '../footer.php'  ?>
