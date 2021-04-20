@@ -85,3 +85,43 @@
                 </div>
             </div>
         </header>
+        <main>
+            <section>
+                <div class="overlay">
+                    <img src="images/jad-limcaco-fRggLY1DQTM-unsplash.jpg" alt="fitness"/>
+                    <!--Photo by <a href="https://unsplash.com/@jadlimcaco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jad Limcaco</a> on <a href="/s/photos/fitness-wallpaper?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
+                </div>
+            </section>
+        </main>
+        <div class="footer-container">
+            <footer class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-links">
+                        <a href="home_new.php">Home</a> | 
+                        <a href="#About">About</a> | 
+                        <a href="#SProducts">Sponsored Products</a> | 
+                        <a href="#Payments">Payment</a> | 
+                        <a href="#FAQ">FAQ</a>
+                    </p>
+
+                    <p class="footer-company-name">
+                        Your Wellbeing &copy; 2021 
+                    </p>
+                </div>
+                <div class="footer-center">
+                    <div>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">contact@yourwellbeing.com</a></p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
