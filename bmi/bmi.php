@@ -1,10 +1,10 @@
 <?php 
 
-include 'header.php';
+include '../header.php';
 
-require_once 'Models/Database.php';
-require_once 'Models/users.php';
-require_once 'Models/user_data.php';
+require_once '../Models/Database.php';
+require_once '../Models/users.php';
+require_once '../Models/user_data.php';
 
     session_start();
 
@@ -60,7 +60,7 @@ if(isset($_POST['submit']))
 
 
 
-<link rel="stylesheet" type="text/css" href="./css/bmi.css">
+<link rel="stylesheet" type="text/css" href="../css/bmi.css">
 
 <main class="container planner">
     <h1>How to calculate Body Mass Index</h1>
@@ -91,7 +91,7 @@ if(isset($_POST['submit']))
                  <?php 
           
           if(isset($_SESSION['login'])){
-              echo '<p style="float:left;"><a href="personal.php">Go Back</a></p>';
+              echo '<p style="float:left;"><a href="../login/personal.php">Go Back</a></p>';
           } ?>
             </form>
             
@@ -99,4 +99,4 @@ if(isset($_POST['submit']))
     </div>
 </main>
 
-<?php include 'footer.php'  ?>
+<?php include '../footer.php'  ?>
