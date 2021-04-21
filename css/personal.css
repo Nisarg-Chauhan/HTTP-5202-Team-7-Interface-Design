@@ -76,6 +76,13 @@ input{
     margin: 1.5 em;
 }
 
+.image{
+    background-image:url(../images/personal.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
 
 
 .button {
