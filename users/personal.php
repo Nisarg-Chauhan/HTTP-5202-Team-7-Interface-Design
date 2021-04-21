@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include '../header.php';
+    include '../template/header.php';
 
     require_once '../Models/Database.php';
     require_once '../Models/users.php'; 
@@ -75,6 +75,4 @@
 </div>
 </main>
     
- <?php include '../footer.php';
-
-?>
+<?php include '../template/footer.php'; ?>
