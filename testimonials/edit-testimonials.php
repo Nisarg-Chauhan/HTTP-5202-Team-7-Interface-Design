@@ -8,23 +8,22 @@
     session_start();
     $dbcon = Database::getDb();
     $test = new Testimonial();
+    
+    //User must be logged in to edit a testimonial
     if(isset($_SESSION['login'])){
-        
+        //Admin can see all users and their testimonials
         if(strtolower($_SESSION['role'])=='admin'){
             
             $users =  $test->getAllUsers($dbcon);
-            } else {
+        } else {
+            //Normal user can only see his own testimonials
             $users =  $test->getUserById($_SESSION['userId'],$dbcon);
         }
-        } else {
+    } else {
         header("location:../login/login.php");
     }
-    //foreach ($users as $user){        
-    //    echo $user->first_name.' and '.$user->id;
-    //}
-?>
-
-<?php
+    
+    //Id of the selected testimonial from the update form
     
     if(isset($_POST['updateTestimonial'])){
         
@@ -34,9 +33,8 @@
         $test=new Testimonial();
         $testimonial=$test->getTestimonialById($testId, $dbcon);
     }
-?>
-
-<?php
+    
+    //All information of the selected testimonial before saving to database
     
     if(isset($_POST['editTestimonial'])){
         
@@ -46,15 +44,33 @@
         $title = $_POST['title'];
         $userId = $_POST['user'];
         
+        //Field validation
+        include 'formValidation.php';
+        
+        //$regexText="/^\w{3,}$/i"; //At least 3 characters
+        $regex="/^[1-9]\d*$/";    //Only positive number for id
+        
+        //Outputs of validation used to write to the database
+        $resultUserId=validateInput($userId,"user id", $regex);
+        $resultTestId=validateInput($tId,"testimonial id", $regex);
+        $resultTitle=validateInput($title,"title");
+        $resultText=validateInput($message,"message");
+        
+        //Creating a test object
         $testimonial=new Testimonial();
-        $count= $testimonial->updateTestimonial($tId,$title, $message, $userId, $dbcon);
+        
+        //Saving data to database only if validated
+        if($resultUserId['bool'] && $resultTestId['bool'] && $resultTitle['bool'] && $resultText['bool'] ){
+            $count= $testimonial->updateTestimonial($tId,$title, $message, $userId, $dbcon);
+        }
         
         
         if($count){
             
+            //Go back to testimonials list in case of success
             header("Location: testimonials.php");
-        }
-        else {
+        }else {
+            //Error message in case of failure
             echo " problem updating the testimonial";
         }
         
@@ -83,18 +99,18 @@
             <label for="user">User</label>
             <select name="user" id="user" class="form-select">
                 <?php
-					//$selectOptions=$users;
+                    //$selectOptions=$users;
                     if(strtolower($_SESSION['role'])=='admin'){
-                    
+                        
+                        //For admin
                         foreach ($users as $user){
-                            //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
                             echo '<option value="'.$user->id.'" '.(($user->id==$testimonial->user_id)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
                         }
                     } else {
-                        
+                        //For normal user
                         echo '<option value="'.$users->id.'" '.(($users->id==$testimonial->user_id)? 'selected':'').">".$users->first_name.' '.$users->last_name."</option>";
                     }
-					
+                    
                 ?>
             </select>
         </div>
@@ -103,4 +119,4 @@
     </form>
 </main>
 
-<?php include '../footer.php'; ?>
+<?php include '../footer.php'; ?>            

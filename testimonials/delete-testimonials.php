@@ -10,7 +10,7 @@
     $test = new Testimonial();
     
     if(isset($_SESSION['login']) && strtolower($_SESSION['role'])=='admin'){
-    
+        
         $testimonials =  $test->getAllTestimonials($dbcon);
     } else {
         header("location:../login/login.php");
@@ -30,43 +30,43 @@
         
         if($count){
             
-        header("Location: testimonials.php");
+            header("Location: testimonials.php");
         }
         else {
-        echo " problem removing the testimonial";
+            echo " problem removing the testimonial";
         }
         
         
-        }
-        ?> 
-        
-        <main class="container testimonials">
-        
-        <h1>Remove a testimonial</h1>
-        
-        <form action="" method="POST" name="clientMessage">
+    }
+?> 
+
+<main class="container testimonials">
+    
+    <h1>Remove a testimonial</h1>
+    
+    <form action="" method="POST" name="delete">
         
         
         <div class="form-group offset-sm-4 offset-md-5">
-        <label for="testimonial">Testimonials</label>
-        <select name="testimonial" id="testimonial" class="form-select">
-        <?php
-        //Populating the dropdown list using associative arrays
-        //Array containing all the options
-        //$selectOptions=$users;
-        foreach ($testimonials as $testimonial){
-        //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
-        echo '<option value="'.$testimonial->id .'">'.$testimonial->title."</option>";
-        }
-        //End of options insertion
-        ?>
-        </select>
+            <label for="testimonial">Testimonials</label>
+            <select name="testimonial" id="testimonial" class="form-select">
+                <?php
+                    //Populating the dropdown list using associative arrays
+                    //Array containing all the options
+                    //$selectOptions=$users;
+                    foreach ($testimonials as $testimonial){
+                        //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
+                        echo '<option value="'.$testimonial->id .'">'.$testimonial->title."</option>";
+                    }
+                    //End of options insertion
+                ?>
+            </select>
         </div>
         
-        <input type="submit" id="submit" name="deleteTestimonial" class="offset-sm-4 offset-md-5 btn btn-danger float-right" value="Delete"/>
+        <input type="submit" id="submit" name="deleteTestimonial" onclick="confirmation();" class="offset-sm-4 offset-md-5 btn btn-danger float-right" value="Delete"/>
         <a href="testimonials.php" class="offset-1">List of testimonials</a>
-        </form>
-        
-        </main>
-        
-        <?php include '../footer.php'; ?>        
+    </form>
+    
+</main>
+
+<?php include '../footer.php'; ?>        

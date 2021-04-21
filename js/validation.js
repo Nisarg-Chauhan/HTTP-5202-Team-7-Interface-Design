@@ -1,56 +1,3 @@
-//Planner validation
-function validatePlanner()
-{
-	var plannerForm=document.forms.clientInfo;
-	var height=plannerForm.height;
-	var weight=plannerForm.weight;
-	var waist=plannerForm.waist;
-	var bodyFat=plannerForm.bodyFat;
-	var bmi=plannerForm.bmi;
-	
-	plannerForm.onsubmit=confirmValidate;
-	
-	function confirmValidate(){
-		if(height.value==="" || height.value===null){
-			height.style.backgroundColor="red";
-			height.focus();
-			return false;
-			} else {
-			height.style.backgroundColor="white";
-		}
-		
-		if(weight.value==="" || weight.value===null){
-			weight.style.backgroundColor="red";
-			weight.focus();
-			return false;
-			} else {
-			weight.style.backgroundColor="white";
-		}
-		if(waist.value==="" || waist.value===null){
-			waist.style.backgroundColor="red";
-			waist.focus();
-			return false;
-			} else {
-			waist.style.backgroundColor="white";
-		}
-		if(bodyFat.value==="" || bodyFat.value===null){
-			bodyFat.style.backgroundColor="red";
-			bodyFat.focus();
-			return false;
-			} else {
-			bodyFat.style.backgroundColor="white";
-		}
-		if(bmi.value==="" || bmi.value===null){
-			bmi.style.backgroundColor="red";
-			bmi.focus();
-			return false;
-			} else {
-			bmi.style.backgroundColor="white";
-		}
-	}
-}
-
-
 
 //Testimonials validation
 function validateTestimonials()
@@ -88,6 +35,17 @@ function validateTestimonials()
 	}
 }
 
-function hidetable(){
-	
+//Deletion confirmation
+function confirmation() {
+
+    var deleteForm = document.forms.delete;
+
+    function confirmDelete() {
+        //If user clicks "Cancel", the deletion is cancelled
+        var question = confirm("Do you really want to delete?");
+        if (!question) {
+            return false;
+        }
+    }
+    deleteForm.onsubmit = confirmDelete;
 }

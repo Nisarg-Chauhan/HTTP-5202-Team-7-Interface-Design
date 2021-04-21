@@ -9,6 +9,7 @@
     $dbcon = Database::getDb();
     $test = new Testimonial();
     
+    //Only current user can create a new message
     if(isset($_SESSION['login'])){
         //if(strtolower($_SESSION['role'])=='admin'){
         
@@ -17,7 +18,7 @@
         $users =  $test->getUserById($_SESSION['userId'],$dbcon);
         //echo $users->id;
         // }
-        } else {
+    } else {
         header("location:../login/login.php");
     }
 ?>
@@ -31,8 +32,23 @@
         $message = $_POST['message'];
         $userId = $_POST['user'];
         
+        //Field validation
+        include 'formValidation.php';
+        
+        //$regexText="/^[\w\s*]+$/i"; // 
+        $regex="/^[1-9]\d*$/";    //Only positive numbers accepted
+        
+        $resultId=validateInput($userId,"user id", $regex);
+        $resultTitle=validateInput($title,"title");
+        $resultText=validateInput($message,"message");
+        
         $testimonial=new Testimonial();
-        $count=$testimonial->addTestimonial($title, $message, $userId, $dbcon);
+        
+        //Only validated data can be written to database
+        if($resultId['bool'] && $resultTitle['bool'] && $resultText['bool'] ){
+            
+            $count=$testimonial->addTestimonial($title, $message, $userId, $dbcon);
+        }
         
         
         if($count){
@@ -68,11 +84,11 @@
             <label for="user">User</label>
             <select name="user" id="user" class="form-select">
                 <?php
-					
-					//foreach ($users as $user){
-                        //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
-						//echo '<option value="'.$user->id.'">'.$user->first_name.' '.$user->last_name."</option>";
-                        echo '<option value="'.$users->id.'" selected >'.$users->first_name.' '.$users->last_name."</option>";
+                    
+                    //foreach ($users as $user){
+                    //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
+                    //echo '<option value="'.$user->id.'">'.$user->first_name.' '.$user->last_name."</option>";
+                    echo '<option value="'.$users->id.'" selected >'.$users->first_name.' '.$users->last_name."</option>";
                     //}
                     
                 ?>
@@ -84,4 +100,4 @@
     </form>
 </main>
 
-<?php include '../footer.php'; ?>
+<?php include '../footer.php'; ?>    
