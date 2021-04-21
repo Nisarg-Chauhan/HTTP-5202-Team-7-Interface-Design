@@ -15,26 +15,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $dbcon=Database::getDb();
       $message_err = "";
       
-      
+       $_SESSION['login'] = $_POST['email']; 
     
-     // $sql = "SELECT * FROM users WHERE email = '$username' and password = '$password'";
-     // $statement = $dbcon->prepare($sql);
-     // $statement->execute();
-     // $count = $statement->rowCount();
-     $newUser=new User();
+      $newUser=new User();
      
-     $user=$newUser->getCurrentUser($username,$password,$dbcon);
+     $user=$newUser->getCurrentUser($username,$password, $dbcon);
             
-      // If result matched $username and $password, table row must be 1 row
-		
-      // if($count == 1) {
+      
       if(isset($user) && $user!="") {
           
          $_SESSION['login'] = $_POST['email']; 
          $_SESSION['userId']=$user->id;
-         $_SESSION['role']=$user->role;
          
-         header("location:../homepage/homepage.php");
+         
+         header("location:../login/personal.php");
       }else {
          $message_err = "Username or Password not valid";
       }

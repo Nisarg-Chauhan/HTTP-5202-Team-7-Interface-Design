@@ -5,6 +5,7 @@
     require_once '../Models/Database.php';
     require_once '../Models/users.php'; 
     require_once '../Models/Coaches.php';
+    require_once "../Library/dropdown.php";
      
      $dbcon=Database::getDb();
             
@@ -14,36 +15,38 @@
      $personal = $statement->fetchAll(PDO::FETCH_OBJ);
 
 
+
+
     // Getting coaches
-    $new_coach = new Coach();
-    $coaches =  $new_coach->getAllCoaches($dbcon);
+    $coach = "";
+    $s2 = new Coach();
+    $coaches = $s2->getCoaches(Database::getDb());
 
-    if (isset($_POST['add_coach'])) {
-        
-        foreach ($coaches as $coach){
-        
-    $check_coach = $coach->id;
-    $n_coach=new User();
-	$c=$n_coach->addCoach($check_coach, $dbcon);
     
-} 
+
+
+if (isset($_POST['add_coach'])) {
+        
+        
+        
+    $check_coach = $_POST['id'];
+    $new_coach=new User();
+	$c=$new_coach->addCoach($check_coach, $dbcon);
     
-     
-   } else {
-            echo 'ups';
-        }
 
 
+    }
       
     ?>
        
-    
+<html lang="en">
 
-     
+<head>
     
-<link rel="stylesheet" type="text/css" href="../css/personal.css">
+    <link rel="stylesheet" href="../css/personal.css" type="text/css">
+</head>
 <main class="container-personal">
-    <div class="column-left">
+    <div class="column-left" style="float:left;">
          <ul>
             <li><a href="plan.php">Diet planner</a> </li>
             <li><a href="exercise-list.php">My Exercises</a> </li>
@@ -63,6 +66,7 @@
        
        <table class="table table-striped">
   <tr>
+   <th>Registration number</th>
     <th>Firstname</th>
     <th>Lastname</th>
     <th>Email</th>
@@ -71,26 +75,36 @@
     <th></th>
   </tr>
   <tr>
+    <td>' .$personal_data->id. '</td>
     <td>' .$personal_data->first_name. '</td>
     <td>' .$personal_data->last_name. '</td>
     <td>' .$personal_data->email. '</td>
     <td>' .$personal_data->age. '</td>';
     
-    } ?>
     
-      <td> <select name="choose_coach"> <?php foreach ($coaches as $coach){
-            
-        echo '<option value="'.$coach->id.'">'.$coach->first_name.' '.$coach->last_name."</option>";
-        
-    } ?>
-         </select></td> 
+    
+     echo ' <td> <select>'; 
+                 echo populateDropdown($coaches, $coach);
+              
+     echo  '</select>  </td> 
         <td> <button type="button" class="button" name="add_coach" value="Add Coach">Add Coach </button>
          </td>
-  </tr>
+   </tr>
   
-</table>
+</table> 
+        
+ <form action="../login/update-user.php" method="post">';
+ 
+  echo '<input type="hidden" name="id" value="' . $personal_data->id;  
+    echo '"/>';
+        
+ echo '<input type="submit" class="button btn btn-primary"  name="update-user" value="Update Details"/>' ;
+echo '</form>
       <h2 style="float:right;" ><a href = "../login/logout.php">Sign Out</a></h2>
-      </div>
+      </div>'; 
+    
+     }?>
+       
             
       <div> 
           <?php if(!isset($_SESSION['your_bmi'])){
@@ -100,11 +114,13 @@
     
             echo '<h4 style="float:left;">Your BMI '  .$_SESSION['your_bmi']; }'</h4>'
 
-     ?>     
+     ?>    
 
          
-</div>
+        
 </main>
+         
+   
     
  <?php include '../footer.php';
 

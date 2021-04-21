@@ -16,12 +16,14 @@ if(isset($_POST['register'])){
     $_SESSION['last_name'] = $_POST['lname'];
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['age'] = $_POST['age'];
+    $_SESSION['role'] = 'client';
 
 
 
     $pass_err = $email_err = $fname_err = $lname_err = $age_err = "";
     $fname = $email = $lname = $age = $password = "";
     
+    $role = 'client';
       
     if ($_POST['pwd'] == ""){
         $pass_error = "Please choose valid password"; 
@@ -50,7 +52,7 @@ if(isset($_POST['register'])){
 
    if($_POST['fname'] == ""){
         $fname_err =  " please enter name";
-    } else if (is_numeric($fname)){
+    } else if (is_numeric($_POST['fname'])){
         $fname_err =  "please enter valid name";
     } else {
         $fname = $_POST['fname'];
@@ -58,7 +60,7 @@ if(isset($_POST['register'])){
     
     if($_POST['lname'] == ""){
         $lname_err =  " please enter last name";
-    } else if (is_numeric($lname)){
+    } else if (is_numeric($_POST['lname'])){
         $lname_err =  " please enter valid last name";
     } else {
         $lname =  $_POST['lname'];
@@ -79,10 +81,10 @@ if(isset($_POST['register'])){
    }*/
 
  if(!$fname == "" && !$lname == "" && !$email == "" && !$password == "" && !$age == ""){
-     header ("Location: welcome.php");
+     header ("Location: ../login/welcome.php");
      $dbcon=Database::getDb();
     $user=new User();
-	$c=$user->addUser($fname, $lname, $email, $password, $age, $dbcon);
+	$c=$user->addUser($fname, $lname, $email, $password, $age, $role, $dbcon);
    }
     
    
