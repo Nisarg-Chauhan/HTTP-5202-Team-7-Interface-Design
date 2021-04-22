@@ -5,7 +5,7 @@
     require_once '../Models/Coaches.php';
     
     session_start();
-    
+     //The user must be an admin to be able to delete a coach
     if(!isset($_SESSION['login']) || strtolower($_SESSION['role'])!='admin'){
 
         header("location:../login/login.php");
@@ -51,11 +51,9 @@
             <label for="coach">Select a coach</label>
             <select name="coach_id" id="coach" class="form-select">
                 <?php
-					//Populating the dropdown list using associative arrays
-					//Array containing all the options
-					//$selectOptions=$users;
+                //List all the coaches
 					foreach ($coaches as $coach){
-                        //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
+                        
 						echo '<option value="'.$coach->id .'">'.$coach->first_name .' '.$coach->last_name. "</option>";
                     }
 					//End of options insertion

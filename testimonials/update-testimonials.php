@@ -9,11 +9,14 @@
     $dbcon = Database::getDb();
     $test = new Testimonial();
     
+    //Logged in user can access testimonials page
     if(isset($_SESSION['login'])){
     
+    //Admin can edit all testimonials
         if(strtolower($_SESSION['role'])=='admin'){
             $testimonials =  $test->getAllTestimonials($dbcon);
         } else{
+        //User can update only his/her own testimonials
              $testimonials =  $test->getUserTestimonials($_SESSION['userId'], $dbcon);
         }
     } else {
@@ -32,11 +35,8 @@
         <label for="testimonial">Select a testimonial</label>
         <select name="testimonial" id="testimonial" class="form-select">
             <?php
-                //Populating the dropdown list using associative arrays
-                //Array containing all the options
-                //$selectOptions=$users;
+                //List of all testimonials
                 foreach ($testimonials as $testimonial){
-                    //echo '<option value="'.$user->id.'"'.((isset($user->first_name) && $age==$selectValue)? 'selected':'').">".$user->first_name.' '.$user->last_name."</option>";
                     echo '<option value="'.$testimonial->id .'">'.$testimonial->title."</option>";
                 }
                 //End of options insertion

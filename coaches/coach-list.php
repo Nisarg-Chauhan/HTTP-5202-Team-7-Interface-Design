@@ -7,7 +7,7 @@
     $coach = new Coach();
     $coaches =  $coach->getAllCoaches($dbcon);
     
-?>
+?> 
 
 
 <main class="container coach">
@@ -16,6 +16,8 @@
 	
 	
 	<?php
+	
+		//Display the list of coaches from database
 		
 		foreach($coaches as $currentCoach){
 			

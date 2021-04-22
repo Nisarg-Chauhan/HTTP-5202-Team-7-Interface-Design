@@ -35,12 +35,12 @@
         //Field validation
         include 'formValidation.php';
         
-        //$regexText="/^[\w\s*]+$/i"; // 
+        $regexText="/^(?=.*?[a-zA-Z]).{3,}$/i"; //At least 3 characters
         $regex="/^[1-9]\d*$/";    //Only positive numbers accepted
         
         $resultId=validateInput($userId,"user id", $regex);
-        $resultTitle=validateInput($title,"title");
-        $resultText=validateInput($message,"message");
+        $resultTitle=validateInput($title,"title",$regexText);
+        $resultText=validateInput($message,"message",$regexText);
         
         $testimonial=new Testimonial();
         
@@ -71,14 +71,16 @@
         
         <div class="form-group offset-sm-4 offset-md-5">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="Type your first name"/>
-        </div>
+            <input type="text" name="title" value="<?=isset($resultTitle)?$title:'';?>" id="title" class="form-control" placeholder="Type your first name"/>
+            <span style="color:red;"><?= (isset($resultTitle) && !$resultTitle['bool'])?$resultTitle['text']:'';?></span>
+        </div> 
         
         
         <div class="form-group offset-sm-4 offset-md-5">
             <label for="message">Your message</label>
-            <textarea name="message" id="message" class="form-control" placeholder="Type your message here"></textarea>
-        </div>
+            <textarea name="message" value="<?=isset($resultText)?$message:'';?>" id="message" class="form-control" placeholder="Type your message here"></textarea>
+            <span style="color:red;"><?= (isset($resultText) && !$resultText['bool'])?$resultText['text']:'';?></span>
+        </div> 
         
         <div class="form-group offset-sm-4 offset-md-5">
             <label for="user">User</label>
@@ -92,8 +94,8 @@
                     //}
                     
                 ?>
-            </select>
-        </div>
+            </select><span style="color:red;"><?= (isset($resultId) && !$resultId['bool'])?$resultId['text']:'';?></span>
+        </div> 
         
         <input type="submit" name="addTestimonial" id="send" onclick="validateTestimonials();" class="offset-sm-4 offset-md-5 btn btn-success float-right" value="Send"/>
         <a href="testimonials.php" class="offset-1">List of testimonials</a>
