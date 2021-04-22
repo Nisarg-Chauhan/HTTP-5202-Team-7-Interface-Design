@@ -25,7 +25,7 @@
     
 
 
-if (isset($_POST['add_coach'])) {
+/*if (isset($_POST['add_coach'])) {
         
         
         
@@ -35,7 +35,8 @@ if (isset($_POST['add_coach'])) {
     
 
 
-    }
+    }*
+   // will work soon
       
     ?>
        
