@@ -85,7 +85,7 @@ if(isset($_POST['updUser'])){
        
         <div class="form-group">
             <label for="role">Role :</label>
-            <input type="text" name="role" value="" class="form-control"
+            <input type="text" name="role" value="<?= $role; ?>" class="form-control"
                    id="role" placeholder="Enter role">
             
         </div>
