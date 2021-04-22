@@ -7,19 +7,20 @@ require_once '../Models/users.php';
 
 if(isset($_POST['register'])){
     
-    /*session_start();
+    session_start();
     
     $_SESSION['first_name'] = $_POST['fname'];
     $_SESSION['last_name'] = $_POST['lname'];
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['age'] = $_POST['age'];
-    $_SESSION['role'] = 'client';*/
+    $_SESSION['role'] = 'client';
 
 
 
     $pass_err = $email_err = $fname_err = $lname_err = $age_err = "";
     $fname = $email = $lname = $age = $password = "";
     
+    //setting 'client' role by default
     $role = 'client';
       
     if ($_POST['pwd'] == ""){
@@ -70,12 +71,7 @@ if(isset($_POST['register'])){
     }
     
 
-   /*if($fname && $lname && $email && $password && $age){
-       header ("Location: welcome.php");
-     $dbcon=Database::getDb();
-    $user=new User();
-	$c=$user->addUser($fname, $lname, $email, $password, $age, $dbcon);
-   }*/
+
 
  if(!$fname == "" && !$lname == "" && !$email == "" && !$password == "" && !$age == ""){
      header ("Location: ../login/welcome.php");
