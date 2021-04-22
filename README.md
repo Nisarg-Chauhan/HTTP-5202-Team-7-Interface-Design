@@ -8,9 +8,9 @@
 * Coach advices feature       --Dynamic CRUD done
 
 ### Nodir
-* Login feature               --Dynamic CRUD almost done
-* Faq feature                 --Dynamic CRUD almost done
-* BMI feature                 --Dynamic CRUD almost done
+* Login && Registration feature --Dynamic CRUD done
+* Faq feature                   --Dynamic CRUD almost done
+* BMI feature                   -- Done
 
 ### Nisarg
 * Product feature             --Dynamic CRUD almost done
