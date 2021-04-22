@@ -1,6 +1,6 @@
 <?php 
    
-   include 'header.php';
+   include '../header.php';
 
     require_once '../Models/Database.php';
     require_once '../Models/users.php'; 
@@ -20,12 +20,12 @@
     // Getting coaches
     $coach = "";
     $s2 = new Coach();
-    $coaches = $s2->getCoaches(Database::getDb());
+    $coaches = $s2->getAllCoaches(Database::getDb());
 
     
 
 
-/*if (isset($_POST['add_coach'])) {
+if (isset($_POST['add_coach'])) {
         
         
         
@@ -35,7 +35,7 @@
     
 
 
-    }*
+    }
    // will work soon
       
     ?>
@@ -121,4 +121,4 @@ echo '</form>
         
 </main>
          
-<?php include 'footer.php'; ?>
+<?php include '../footer.php'; ?>
