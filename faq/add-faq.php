@@ -23,7 +23,6 @@ if(isset($_POST['addFaq'])){
     }
 }
 
-
 ?>
 
 <html lang="en">
@@ -39,15 +38,12 @@ if(isset($_POST['addFaq'])){
             <label for="question">Topic :</label>
             <input type="text" class="form-control" name="question" id="question" value=""
                    placeholder="Enter Topic Name">
-            
-        </div>
+         </div>
         <div class="form-group">
             <label for="answer">Answer :</label>
             <input type="text" class="form-control" name="answer" id="answer" value="" 
                    placeholder="Enter answer">
-            
         </div>
-        
         <a href="../faq/success.php" id="btn_back" class="btn btn-success float-left">Back</a>
         <button style="margin: 20px 0 0 150px;" type="submit" name="addFaq"
                 class="btn btn-primary float-left" id="btn-submit">
@@ -55,9 +51,5 @@ if(isset($_POST['addFaq'])){
         </button>
     </form>
 </div>
-
-
 </body>
-
-    
    <?php include '../footer.php'; ?>
