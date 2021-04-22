@@ -6,7 +6,6 @@
     
     session_start();
     
-    
     if(isset($_POST['id'])){
         $id = $_POST['id'];
         $db = Database::getDb();
@@ -19,11 +18,6 @@
         else {
             echo " problem deleting";
         }
-
-
     }
-
-     
-
 
  include '../footer.php' ;?>
