@@ -36,26 +36,34 @@
         }
         
         
-        /*public function getUser($email, $password, $db){
+        public function getAllUsers($dbcon){
+            
+            $sql = "SELECT* FROM users
+                    ORDER by users.id";
+            $statement = $dbcon->prepare($sql);
+            $statement->execute();
+            
+            $users = $statement->fetchAll(PDO::FETCH_OBJ);
+            return $users;
+        }
+         public function getUserById($id, $db){
+            
+            $sql = "SELECT * FROM users WHERE id = :id";
+            $statement = $db->prepare($sql);
+            $statement->bindParam(':id', $id);
+            $statement->execute();
+            return $statement->fetch(PDO::FETCH_OBJ);
+        }
         
-        $sql = "select *from login where email = '$email' and password = '$password'";  
-        $result = mysqli_query($db, $sql);  
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-        $count = mysqli_num_rows($result);  
         
-        
-        }*/
-        
-        
-        public function updateUser($id, $fname, $lname, $email, $phone, $password, $age, $db){
+        public function updateUser($id, $fname, $lname, $email, $age, $db){
             
             $sql = "UPDATE users
             SET first_name = :fname,
                 last_name = :lname,
                 email = :email,
-                password = :password,
                 age = :age
-            WHERE id = :id";
+                WHERE id = :id";
             
             $statement =  $db->prepare($sql);
             
@@ -63,15 +71,47 @@
             $statement->bindParam(':fname', $fname);
             $statement->bindParam(':lname', $lname);
             $statement->bindParam(':email', $email);
-            $statement->bindParam(':password', $password);
             $statement->bindParam(':age', $age);
             
             $statement->bindParam(':id', $id);
-            
-            
             $count = $statement->execute();
             
             return $count;
+        }
+        
+        public function updateUserAdmin($id, $fname, $lname, $email, $age, $role, $db){
+            
+            $sql = "UPDATE users
+            SET first_name = :fname,
+                last_name = :lname,
+                email = :email,
+                age = :age,
+                role= :role
+                WHERE id = :id";
+            
+            $statement =  $db->prepare($sql);
+            
+            
+            $statement->bindParam(':fname', $fname);
+            $statement->bindParam(':lname', $lname);
+            $statement->bindParam(':email', $email);
+            $statement->bindParam(':age', $age);
+            $statement->bindParam(':role', $role);
+            
+            $statement->bindParam(':id', $id);
+            $count = $statement->execute();
+            
+            return $count;
+        }
+        public function deleteUser($id, $db){
+            
+            $sql = "DELETE FROM users WHERE id = :id";
+            
+            $statement = $db->prepare($sql);
+            $statement->bindParam(':id', $id);
+            $count = $statement->execute();
+            return $count;
+            
         }
     }
 ?>
