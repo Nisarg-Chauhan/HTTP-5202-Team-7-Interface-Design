@@ -1,8 +1,6 @@
 <?php 
 
 include '../header.php'; ?>
-
-
 <main style="background-color:white; height:500px;" class="container ">
 <h3> Process successfully completed </h3> </br> 
 
