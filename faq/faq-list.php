@@ -8,12 +8,9 @@
     $new =  $item->getAllFaqs($dbcon);
     
 ?>
-
-
 <main style="background-color:white;" class="container user">
 	
 	<h3>Frequently Asked Questions list</h3>
-	
 	
 	<table class="table table-bordered tbl">
         <thead>
@@ -23,7 +20,7 @@
             <th>Answer</th>            
             <th>Update</th>
             <th>Delete</th>
-            
+       
         </tr>
         </thead>
         <tbody>
@@ -49,8 +46,6 @@
         </tbody>
     </table>
     <a href="./add-faq.php" id="btn_addFaq" class="btn btn-success btn-lg float-right">Add FAQ</a>
-	
-	
 </main>		
 
 <?php include '../footer.php'; ?>
