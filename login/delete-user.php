@@ -1,4 +1,4 @@
-<?php
+<?php 
 
     include '../header.php';
     require_once '../Models/Database.php';
@@ -22,7 +22,7 @@
             header("Location: ../login/success.php");
         }
         else {
-            echo " problem deleting";
+            echo " ups, please try again";
         }
 
 
@@ -31,4 +31,4 @@
      
 
 
- include '../footer.php' ;?>
+ include '../footer.php'; ?>
