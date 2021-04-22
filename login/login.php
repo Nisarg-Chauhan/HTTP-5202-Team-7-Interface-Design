@@ -1,7 +1,7 @@
 <?php 
 
-include '../template/header.php';
-session_start();
+include 'header.php';
+
 
 require_once '../Models/Database.php';
 require_once '../Models/users.php';
@@ -9,7 +9,7 @@ require_once '../Models/users.php';
   
 if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
-      
+      session_start();
       $username = $_POST['email'];  
       $password = md5($_POST['pwd']); 
       $dbcon=Database::getDb();
@@ -17,8 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       
        $_SESSION['login'] = $_POST['email']; 
     
-      $newUser=new User();
-     
+      $newUser=new User();     
      $user=$newUser->getCurrentUser($username,$password, $dbcon);
             
       
@@ -35,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    }
 ?>
     
-<!--link rel="stylesheet" type="text/css" href="./css/login.css"-->
+<link rel="stylesheet" type="text/css" href="../css/login.css">
 
 <main class="container planner">
     <h1>Login</h1>
@@ -61,4 +60,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </main>
-<?php include '../template/footer.php'; ?>
+<?php include 'footer.php'; ?>
