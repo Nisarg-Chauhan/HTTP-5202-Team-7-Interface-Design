@@ -1,8 +1,8 @@
 <?php 
 
-include '../template/header.php';
+include 'header.php';
 
- session_start();
+ 
 
 ?>
 
@@ -19,4 +19,4 @@ include '../template/header.php';
     
 
 
-<?php include '../template/footer.php'; ?>
+<?php include 'footer.php'; ?>
