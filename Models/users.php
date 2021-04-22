@@ -4,10 +4,10 @@
     {
        
         
-        public function addUser($fname, $lname, $email, $password, $age, $db)
+        public function addUser($fname, $lname, $email, $password, $age, $role, $db)
         {
-            $sql = "INSERT INTO users (first_name, last_name, email, password, age) 
-            VALUES (:fname, :lname, :email, :password, :age)";
+            $sql = "INSERT INTO users (first_name, last_name, email, password, age, role) 
+            VALUES (:fname, :lname, :email, :password, :age, :role)";
             $statement = $db->prepare($sql);
             
             $statement->bindParam(':fname', $fname);
@@ -15,6 +15,7 @@
             $statement->bindParam(':email', $email);
             $statement->bindParam(':password', $password);
             $statement->bindParam(':age', $age);
+            $statement->bindParam(':role', $role);
             
             
             $count = $statement->execute();
