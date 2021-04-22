@@ -7,8 +7,8 @@
     {
         //Properties required for the connection to the database
         
-        private static $userName = 'habmcs45_Nodir';    //Username
-        private static $passWord = 'y+!#?ST3~TYO';        //Password
+        private static $userName = 'habmcs45_Diarra';    //Username
+        private static $passWord = 'T}fLH[E!G}YY';        //Password
         private static $dsn = 'mysql:host=192.99.199.128; dbname=habmcs45_PHP_Project'; //Data source
         // private static $userName = 'root';    //Username
         // private static $passWord = '';        //Password
