@@ -1,22 +1,19 @@
 <?php 
 
-
 include '../template/header.php';
 
 require_once '../Models/Database.php';
 require_once '../Models/users.php';
 
-
-
 if(isset($_POST['register'])){
     
-    session_start();
+    /*session_start();
     
     $_SESSION['first_name'] = $_POST['fname'];
     $_SESSION['last_name'] = $_POST['lname'];
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['age'] = $_POST['age'];
-    $_SESSION['role'] = 'client';
+    $_SESSION['role'] = 'client';*/
 
 
 
