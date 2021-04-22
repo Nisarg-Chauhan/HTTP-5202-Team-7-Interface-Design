@@ -9,7 +9,7 @@
 
 ### Nodir
 * Login && Registration feature --Dynamic CRUD done
-* Faq feature                   --Dynamic CRUD almost done
+* Faq feature                   --Dynamic CRUD done
 * BMI feature                   -- Done
 
 ### Nisarg
