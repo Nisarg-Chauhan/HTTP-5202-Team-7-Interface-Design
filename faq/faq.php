@@ -1,6 +1,5 @@
 <?php 
 
-
     include '../header.php'; 
     require_once '../Models/Database.php';
     require_once '../Models/faq_db.php';
@@ -10,8 +9,6 @@
     $faqs =  $blog->getAllFaqs($dbcon);
     
 ?>
-
-
 <main class="container planner">
 <h2>Frequently Asked Questions</h2>
 <section class="faq-block" id="faq-main" >
