@@ -18,7 +18,7 @@
 * Contact us feature          --Static CRUD almost done
 
 ### Kunal
-* Diet Planner feature        --Dynamic CRUD done
-* Newsletter feature          --Dynamic CRUD done
-* Homepage Layout             --Almost done
+* Diet Planner feature        --Done
+* Newsletter feature          --Done
+* Homepage Layout             --Done
 * About Us                    --Almost done
