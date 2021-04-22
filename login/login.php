@@ -1,6 +1,6 @@
 <?php 
 
-include 'header.php';
+include '../header.php';
 
 
 require_once '../Models/Database.php';
@@ -60,4 +60,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </main>
-<?php include 'footer.php'; ?>
+<?php include '../footer.php'; ?>
