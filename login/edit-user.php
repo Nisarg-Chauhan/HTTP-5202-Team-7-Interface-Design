@@ -100,4 +100,7 @@ if(isset($_POST['updUser'])){
 
 </body>
 
+ <?php 
+
+include '../footer.php';
     
