@@ -1,4 +1,4 @@
-<?php include '../header.php' ?>
+<?php include '../Template/header.php' ?>
 
 <main class="container planner exercise">
 	
@@ -231,4 +231,4 @@
 	
 </main>		
 
-<?php include '../footer.php'; ?>
+<?php include '../Template/footer.php'; ?>

@@ -1,0 +1,169 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre&family=Noto+Sans:wght@400;700&family=Roboto&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Parisienne&family=Raleway&display=swap');
+
+/********Planner*/
+.planner,.testimonials,.coach{
+	background-color:white;
+	max-width:100%;
+	padding-bottom:5em;
+	padding-top:2em;
+	/*margin:0 auto;*/
+	color: black; 
+	
+}
+
+.planner h1,.testimonials h1,.coach h1{
+	text-align:center;
+	font-family:'Parisienne','Lato', 'Raleway',sans-serif, cursive;
+	font-size:3em;
+	font-weight:bold;
+}
+
+.planner label,.testimonials label{
+	margin-top:0.5em;
+	font-size:1.2em;
+	
+	/* color: white; */
+}
+.planner #submit,.testimonials #send, .testimonials #submit{
+	margin-top:1em;
+	width:150px;
+}
+.planner legend{
+	margin-top:1em;
+	margin-bottom:0;
+	/* text-align:center; */
+	
+}
+
+
+.testimonials article{
+	padding-bottom:1.5em;
+	/* margin-left:0.05em; */
+	background-color:white;
+	color : black;
+	/* margin-left:0; */
+	margin-right:0.15em;
+	text-align:justify;
+}
+.testimonials h4, .testimonials h5 {
+	text-align:center;
+}
+.testimonial  img{
+	margin-left:47%;
+	max-width:100%;
+}
+.coach .pic img{
+	max-width:100%;
+	
+}
+/* .coach .pic{
+	width:20%;
+	padding-right:0;
+} */
+
+.coach .text{
+	text-align:justify;
+}
+.coach .row{
+	padding-bottom:1.5em;
+}
+.coach .row h2{
+	margin-top:0.5em;
+	margin-bottom:1em;
+	color:red;
+}
+.coach .row:first-of-type{
+	padding-top:2em;
+}
+
+.row,.planner .row,.exercise .row,.coach .row, .planner form{
+	max-width:1200px;
+	margin:0 auto;
+}
+.exercise img{
+	width:96%;
+	margin-left:0.75em;
+	max-width:100%;
+	opacity:1;
+}
+.exercise img:hover{
+	border:3px solid white;
+}
+.exercise img:last-of-type{
+	height:90%;
+}
+.exercise .workout{
+	margin-top:2.5em;
+	
+}
+
+.planner h2{
+	text-align:center;
+	margin-bottom:1em;
+	font-size:2em;
+	margin-top:1em;
+	
+}
+.exercise .lose-weight,
+.exercise .strength,
+.exercise .cardio,
+.exercise .stretch{
+	position:relative;
+	padding:0;
+	
+}
+
+.exercise p{
+	margin-bottom:1em;
+	font-size:1.5em;
+	text-align:justify;
+}
+.exercise span{
+	position:absolute;
+	bottom:15%;
+	left:10%;
+	font-size:1.75em;
+	color:red;
+}
+.planner .workout{
+position:relative;
+}
+.planner .workout table{
+	font-size:1.2em;
+	margin-bottom:2em;
+	/* position:absolute; */
+	/* top:80%; */
+	/* left:0%; */
+	/* background-color:lightgray; */
+	/* z-index:1000; */
+}
+.planner .workout h3{
+	font-size:1.5em;
+	margin-bottom:1em;
+	text-align:center;
+}
+.exercise h3:hover{
+color:red;
+}
+.exercise .fat-loss thead{
+	background-color:red;
+}
+.exercise .strength thead{
+	background-color:orange;
+}
+.exercise .general thead{
+	background-color:green;
+}
+.planner a, .coach a,.testimonials a{
+	text-decoration:none;
+	font-size:1.25em;
+}
+
+.planner a:hover, .coach a:hover,.testimonials a:hover{
+	color:red;
+}
+.planner p{
+	text-align:center;
+}

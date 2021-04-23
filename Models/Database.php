@@ -6,13 +6,10 @@
     class Database
     {
         //Properties required for the connection to the database
-        // DB connected to shared IP so each member can work with it the same time
         
         private static $userName = 'habmcs45_Diarra';    //Username
         private static $passWord = 'T}fLH[E!G}YY';        //Password
         private static $dsn = 'mysql:host=192.99.199.128; dbname=habmcs45_PHP_Project'; //Data source
-       
-        
         // private static $userName = 'root';    //Username
         // private static $passWord = '';        //Password
         // private static $dsn = 'mysql:host=localhost;dbname=your_wellbeing_db'; //Data source

@@ -1,6 +1,6 @@
 <?php 
     
-    include '../header.php';
+    include '../Template/header.php';
     require_once '../Models/Database.php';
     require_once '../Models/Testimonials.php';
     //require_once '../Models/users.php';
@@ -122,4 +122,4 @@
     </form>
 </main>
 
-<?php include '../footer.php'; ?>            
+<?php include '../Template/footer.php'; ?>            

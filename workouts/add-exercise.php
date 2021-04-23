@@ -1,5 +1,5 @@
 <?php 
-	include '../header.php';
+	include '../Template/header.php';
 	require_once '../Models/Database.php';
 	require_once '../Models/Exercises.php';
 	
@@ -60,4 +60,4 @@
 	
 </main>		
 
-<?php include '../footer.php'; ?>	
+<?php include '../Template/footer.php'; ?>	
