@@ -21,4 +21,4 @@
 * Diet Planner feature        --Done
 * Newsletter feature          --Done
 * Homepage Layout             --Done
-* About Us                    --Almost done
+* About Us                    --Done
