@@ -15,7 +15,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a href="mainpage.php" class="navbar-brand logo"><span style="color: #fa0202;">Your</span> Wellbeing</a>
+        <a href="home.php" class="navbar-brand logo"><span style="color: #fa0202;">Your</span> Wellbeing</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,7 +44,7 @@
                     <a href="#" class="nav-link dropdown-toggle info-lnk" data-toggle="dropdown">Info</a>
                     <div class="dropdown-menu">
                         <a href="#" class="dropdown-item">Contact Us</a>
-                        <?php session_start(); if (isset($_SESSION['role'])) {
+                        <?php if (isset($_SESSION['role'])) {
                             echo '<a class="dropdown-item" href="./faq/faq-list.php">FAQ List</a>';
                             
                         } else {
