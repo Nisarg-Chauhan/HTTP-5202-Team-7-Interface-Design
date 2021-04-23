@@ -1,5 +1,5 @@
 <?php
-    include_once "header.php";
+    include_once "./Template/header.php";
 ?>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -66,5 +66,5 @@
 </div>
 
 <?php
-    include_once "footer.php";
+    include_once "./Template/footer.php";
 ?>
