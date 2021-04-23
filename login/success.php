@@ -1,6 +1,6 @@
 <?php 
 
-include '../header.php'; ?>
+include '../template/header.php'; ?>
 
 
 <main style="background-color:white; height:500px;" class="container user">
@@ -11,4 +11,4 @@ include '../header.php'; ?>
     
 
 
- <?php include '../footer.php'; ?>
+ <?php include '../template/footer.php'; ?>

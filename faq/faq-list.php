@@ -1,11 +1,16 @@
 <?php 
-    include '../header.php'; 
+session_start();
+    include '../template/header.php'; 
     require_once '../Models/Database.php';
     require_once '../Models/faq_db.php';
     
     $dbcon = Database::getDb();
     $item = new Faq();
     $new =  $item->getAllFaqs($dbcon);
+
+    if(!isset($_SESSION['role'])) {
+        header ("location: ../login/login.php");
+    }
     
 ?>
 <main style="background-color:white;" class="container user">
@@ -48,4 +53,4 @@
     <a href="./add-faq.php" id="btn_addFaq" class="btn btn-success btn-lg float-right">Add FAQ</a>
 </main>		
 
-<?php include '../footer.php'; ?>
+<?php include '../template/footer.php'; ?>

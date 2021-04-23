@@ -1,6 +1,6 @@
 <?php 
    
-    include '../header.php';
+    include '../template/header.php';
     require_once '../Models/Database.php';
     require_once '../Models/faq_db.php';
     
@@ -52,4 +52,4 @@ if(isset($_POST['addFaq'])){
     </form>
 </div>
 </body>
-   <?php include '../footer.php'; ?>
+   <?php include '../template/footer.php'; ?>

@@ -1,10 +1,11 @@
 <?php 
+ 
 
-include '../header.php';
+include '../template/header.php';
 require_once '../Models/Database.php';
 require_once '../Models/users.php';
 
- session_start();
+
     
    
 
@@ -56,7 +57,7 @@ if(isset($_POST['updUser'])){
 
 <div>
     
-    <form action="" method="post">
+    <form  style="width:20%; margin:50px;" action="" method="post">
         <input type="hidden" name="sid" value="<?= $id; ?>" />
         <div class="form-group">
             <label for="fname">First Name :</label>
@@ -102,5 +103,5 @@ if(isset($_POST['updUser'])){
 
  <?php 
 
-include '../footer.php';
+include '../template/footer.php'; ?>
     

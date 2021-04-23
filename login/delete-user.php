@@ -1,6 +1,6 @@
 <?php 
 
-    include '../header.php';
+    include '../template/header.php';
     require_once '../Models/Database.php';
     require_once '../Models/users.php';
     
@@ -31,4 +31,4 @@
      
 
 
- include '../footer.php'; ?>
+ include '../template/footer.php'; ?>

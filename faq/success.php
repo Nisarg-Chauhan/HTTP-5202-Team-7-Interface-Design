@@ -1,6 +1,6 @@
 <?php 
 
-include '../header.php'; ?>
+include '../template/header.php'; ?>
 <main style="background-color:white; height:500px;" class="container ">
 <h3> Process successfully completed </h3> </br> 
 
@@ -8,4 +8,4 @@ include '../header.php'; ?>
     
 </main>
 
-<?php include '../footer.php'; ?>
+<?php include '../template/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php 
 
-include '../header.php';
+include '../template/header.php';
 require_once '../Models/Database.php';
 require_once '../Models/faq_db.php';
 
@@ -61,4 +61,6 @@ if(isset($_POST['updFaq'])){
 </div>
 </body>
 
-    
+    <?php 
+
+include '../template/footer.php';

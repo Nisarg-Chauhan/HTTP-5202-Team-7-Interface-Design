@@ -1,5 +1,5 @@
 <?php 
-    include '../header.php'; 
+    include '../template/header.php'; 
     require_once '../Models/Database.php';
     require_once '../Models/users.php';
     
@@ -10,7 +10,7 @@
 ?>
 
 
-<main style="background-color:white;" class="container user">
+<main style=" margin-bottom:150px;" class="container user">
 	
 	<h3>Users list</h3>
 	
@@ -59,4 +59,4 @@
 	
 </main>		
 
-<?php include '../footer.php'; ?>
+<?php include '../template/footer.php'; ?>

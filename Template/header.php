@@ -21,14 +21,14 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link active home-lnk">Home</a>
+                <a href="home.php" class="nav-item nav-link active home-lnk">Home</a>
                 <a href="#" class="nav-item nav-link about-lnk">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle planner-lnk" data-toggle="dropdown">Planner</a>
                     <div class="dropdown-menu">
                         <a href="#" class="dropdown-item">Exercise Planner</a>
                         <a href="#" class="dropdown-item">Diet Planner</a>
-                        <a href="#" class="dropdown-item">BMI Calculator</a>
+                        <a href="./bmi/bmi.php" class="dropdown-item">BMI Calculator</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -42,15 +42,30 @@
                     <a href="#" class="nav-link dropdown-toggle info-lnk" data-toggle="dropdown">Info</a>
                     <div class="dropdown-menu">
                         <a href="#" class="dropdown-item">Contact Us</a>
-                        <a href="#" class="dropdown-item">FAQ</a>
+                        <?php session_start(); if (isset($_SESSION['role'])) {
+                            echo '<a class="dropdown-item" href="./faq/faq-list.php">FAQ List</a>';
+                            
+                        } else {
+                            echo '<a class="dropdown-item" href="./faq/faq.php">FAQ</a>';
+                             
+                        }
+                            ?>
                         <a href="#" class="dropdown-item">Testimonials</a>
                         <a href="#" class="dropdown-item">Newsletter</a>
                     </div>
                 </div>
             </div>
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link">Login</a>
-                <a href="#" class="nav-item nav-link">Register</a>
+              <?php 
+                if (isset($_SESSION['role'])) {
+                            echo '<a href="./login/user-list.php" class="nav-item nav-link">Users List</a>';
+                            echo ' <a href="./login/logout.php" class="nav-item nav-link">Sign out</a>';
+                        } else {
+                            echo '<a href="./login/login.php" class="nav-item nav-link">Login</a>';
+                             echo ' <a href="./login/registration.php" class="nav-item nav-link">Register</a>';
+                        }
+                
+                            ?>
             </div>
         </div>
         </nav>
