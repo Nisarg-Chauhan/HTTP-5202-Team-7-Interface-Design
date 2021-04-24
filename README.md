@@ -13,9 +13,9 @@
 * BMI feature                   -- Done
 
 ### Nisarg
-* Product feature             --Dynamic CRUD almost done
-* Payment feature             --Dynamic CRUD almost done
-* Contact us feature          --Static CRUD almost done
+* Product feature             -- done
+* Payment feature             -- done
+* Contact us feature          -- done
 
 ### Kunal
 * Diet Planner feature        --Done
