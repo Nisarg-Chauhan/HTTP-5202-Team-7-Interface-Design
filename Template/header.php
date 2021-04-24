@@ -31,7 +31,7 @@
                     <div class="dropdown-menu">
                         <a href="../workouts/planner.php" class="dropdown-item">Exercise Planner</a>
                         <a href="../coaches/coach-list.php" class="dropdown-item">Expert Panel</a>
-                        <a href="#" class="dropdown-item">Diet Planner</a>
+                        <a href="../DietChart/Dietplanner.php" class="dropdown-item">Diet Planner</a>
                         <a href="../bmi/bmi.php" class="dropdown-item">BMI Calculator</a>
                     </div>
                 </div>
