@@ -1,0 +1,43 @@
+/* .products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  padding: 2%;
+  flex-grow: 1;
+  flex-basis: 16%;
+  display: flex;
+}
+
+.product-image img {
+  max-width: 100%;
+}
+
+.product-info {
+  margin-top: auto;
+} */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-gap: 5%;
+  padding: 5%;
+}
+
+.img-container {
+  width: 30%;
+  height: 30%;
+}
+
+.product-info {
+  width: 80%;
+  height: 20%;
+  padding: 2%;
+}
+
+input {
+  text-align: center;
+  position: relative;
+  top: 2%;
+}
