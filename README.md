@@ -13,9 +13,11 @@
 * BMI feature                   -- Done
 
 ### Nisarg
-* Product feature             -- done
+* Product feature      
+[x] Display products in a grid 
 * Payment feature             -- done
 * Contact us feature          -- done
+
 
 ### Kunal
 * Diet Planner feature        --Done
