@@ -1,10 +1,10 @@
 <?php 
+	//session_start();
+	ob_start(); 
 	include '../Template/header.php';
 	require_once '../Models/Database.php';
 	require_once '../Models/Workouts.php';
 	require_once '../Models/Exercises.php';
-	
-	session_start();
 	
 	if(isset($_SESSION['login'])){
 	
@@ -109,10 +109,10 @@
 		To learn more about our exercises,<a href="exercise-list.php"> click here.</a></p>
 	<form  action="" method="POST" name="workoutInfo">
 		
-		<div class="form-group offset-sm-4 offset-md-5">
+		<div class="form-group offset-sm-6">
 			<input type="hidden" name="monday[]" value="monday" />
 			<label  for="monday">Monday</label>
-			<select name="monday[]" id="monday" class="form-select" multiple>
+			<select name="monday[]" id="monday" class="form-control" multiple>
 				<?php
 					foreach ($exercises as $exer){
 						for($nb=0;$nb<4;$nb++){
@@ -128,7 +128,7 @@
 			</select>
 		</div>
 		
-		<div class="form-group offset-sm-4 offset-md-5">
+		<div class="form-group offset-sm-6">
 			<input type="hidden" name="tuesday[]" value="tuesday"/>
 			<label  for="tuesday">Tuesday</label>
 			<select name="tuesday[]" id="tuesday" class="form-control" multiple>
@@ -145,7 +145,7 @@
 		</select>
 	</div>
 	
-	<div class="form-group offset-sm-4 offset-md-5">
+	<div class="form-group offset-sm-6">
 		<input type="hidden" name="wednesday[]" value="wednesday" />
 		<label  for="wednesday">Wednesday</label>
 		<select name="wednesday[]" id="wednesday" class="form-control" multiple>
@@ -161,7 +161,7 @@
 		</select>
 		</div>
 		
-		<div class="form-group offset-sm-4 offset-md-5">
+		<div class="form-group offset-sm-6">
 			<input type="hidden" name="thursday[]" value="thursday" />
 			<label  for="thursday">Thursday</label>
 			
@@ -177,7 +177,7 @@
 				?>
 			</select>
 		</div>
-		<div class="form-group offset-sm-4 offset-md-5">
+		<div class="form-group offset-sm-6">
 			<input type="hidden" name="friday[]" value="friday" />
 			<label  for="friday">Friday</label>
 			
@@ -194,7 +194,7 @@
 			</select>
 		</div>
 		
-		<div class="form-group offset-sm-4 offset-md-5">
+		<div class="form-group offset-sm-6">
 			<input type="hidden" name="saturday[]" value="saturday" />
 			<label  for="saturday">Saturday</label>
 			<select name="saturday[]" id="saturday" class="form-control" multiple>
@@ -210,7 +210,7 @@
 			</select>
 		</div>
 		
-		<div class="form-group offset-sm-4 offset-md-5">
+		<div class="form-group offset-sm-6">
 			<input type="hidden" name="sunday[]" value="sunday" />
 			<label  for="sunday">Sunday</label>
 			<select name="sunday[]" id="sunday" class="form-control" multiple>

@@ -1,11 +1,11 @@
 <?php 
-    
+    //session_start();
+    ob_start(); 
     include '../Template/header.php';
     require_once '../Models/Database.php';
     require_once '../Models/Testimonials.php';
     //require_once '../Models/users.php';
     
-    session_start();
     $dbcon = Database::getDb();
     $test = new Testimonial();
     
@@ -85,22 +85,23 @@
     
     <form action="" method="POST" name="clientMessage">
         <input type="hidden" name="tid" value="<?= $_SESSION['testId']; ?>" />
-        <div class="form-group offset-sm-4 offset-md-5">
+       
+        <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" value="<?= isset($testimonial->title)?$testimonial->title:$title ?>" class="form-control" placeholder="Type your first name"/>
             <span style="color:red;"><?= (isset($resultTitle) && !$resultTitle['bool'])?$resultTitle['text']:'';?></span>
         </div>
         
         
-        <div class="form-group offset-sm-4 offset-md-5">
+        <div class="form-group">
             <label for="message">Your message</label>
             <textarea name="message" id="message"  class="form-control" placeholder="Type your message here"><?=isset($testimonial->message)?$testimonial->message:$message ?></textarea>
             <span style="color:red;"><?= (isset($resultText) && !$resultText['bool'])?$resultText['text']:'';?></span>
         </div>
         
-        <div class="form-group offset-sm-4 offset-md-5">
+        <div class="form-group">
             <label for="user">User</label>
-            <select name="user" id="user" class="form-select">
+            <select name="user" id="user" class="form-control">
                 <?php
                     //$selectOptions=$users;
                     if(strtolower($_SESSION['role'])=='admin'){
@@ -118,7 +119,8 @@
             </select><span style="color:red;"><?= (isset($resultId) && !$resultId['bool'])?$resultId['text']:'';?></span>
         </div>
         
-        <input type="submit" name="editTestimonial" id="send" onclick="validateTestimonials();" class="offset-sm-4 offset-md-5 btn btn-success float-right" value="Send"/>
+        <input type="submit" name="editTestimonial" id="send" onclick="validateTestimonials();" class="offset-sm-4 offset-md-5 btn btn-success" value="Send"/>
+       
     </form>
 </main>
 

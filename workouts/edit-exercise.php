@@ -1,11 +1,10 @@
 <?php 
-    
+    //session_start();
+	ob_start(); 
    include '../Template/header.php';
-    require_once '../Models/Database.php';
+   require_once '../Models/Database.php';
     require_once '../Models/Exercises.php';
     
-    session_start();
-	
 	if(!isset($_SESSION['login']) || strtolower($_SESSION['role'])!='admin'){
 
         header("location:../login/login.php");

@@ -78,7 +78,7 @@
 	padding-top:2em;
 }
 
-.row,.planner .row,.exercise .row,.coach .row, .planner form{
+.row,.planner .row,.exercise .row,.coach .row, .planner form,.form-group{
 	max-width:1200px;
 	margin:0 auto;
 }
@@ -166,4 +166,16 @@ color:red;
 }
 .planner p{
 	text-align:center;
+}
+
+
+.page-footer{
+ position:fixed;
+ bottom:0;
+ padding:10px;
+ width:100%;
+ 
+}
+main{
+    margin-bottom:100px;
 }
