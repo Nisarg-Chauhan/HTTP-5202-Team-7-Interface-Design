@@ -4,9 +4,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
   session_start();
 }
 include '../template/header.php';
-
-
 ?>
+
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -20,24 +19,11 @@ include '../template/header.php';
 </head>
 
 <body>
-
-
-
-
   <div class="row" style="margin-top:10px;">
     <div class="small-12">
-      <p>Success. Whatever task you performed, has been executed successfully. Congrats!</p>
-      <p>In case you purchased a product, then please check your spam in email for the receipt.</p>
-
-
-
+      <p>Your order has been Successfully Placed!</p>
     </div>
   </div>
-
-
-
-
-
   <script src="../js/vendor/jquery.js"></script>
   <script src="../js/foundation.min.js"></script>
   <script>

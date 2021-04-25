@@ -1,43 +1,41 @@
-/* .products {
-  display: flex;
-  flex-wrap: wrap;
+.flex {
+  display: inline-flex; /* Make products flex in row direction (default) */
+  flex-wrap: wrap; /* Make products overflow on new row */
+  justify-content: center; /* Or space-between or space-around */
+  margin: 0 -15px;
+  gap: 20%;
 }
 
-.product-card {
-  padding: 2%;
-  flex-grow: 1;
-  flex-basis: 16%;
-  display: flex;
+.flex > section {
+  margin: 2%;
+  flex: 1 1 0; /* Prevent the extra space around content */
+  text-align: center; /* Align text on center */
+  display: flex; /* Display as flex */
+  flex-direction: column; /* Display flex in column */
+  align-items: center; /* Align items on center */
+  padding: 15px;
 }
 
-.product-image img {
-  max-width: 100%;
+.flex > section > p {
+  flex-grow: 1; /* Keep p's same size */
 }
 
-.product-info {
-  margin-top: auto;
-} */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-  grid-gap: 5%;
-  padding: 5%;
+section > aside > ul {
+  display: flex; /* Display specs in flex-row */
+  list-style-type: none;
+  justify-content: center; /* Specs to start and end of row */
+  margin: 1%;
+}
+img {
+  width: 100%;
 }
 
-.img-container {
-  width: 30%;
-  height: 30%;
-}
-
-.product-info {
-  width: 80%;
-  height: 20%;
-  padding: 2%;
-}
-
-input {
-  text-align: center;
-  position: relative;
-  top: 2%;
+input[type="submit"] {
+  margin-top: 10%;
+  clear: both;
+  background: #424242;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px;
 }

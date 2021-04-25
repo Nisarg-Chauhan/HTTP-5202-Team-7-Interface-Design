@@ -9,7 +9,7 @@
 
 <body>
     <div class="form-container">
-        <form name="frmContact" id="" frmContact"" method="post" action="" enctype="multipart/form-data" onsubmit="return validateContactForm()">
+        <form name="frmContact" id="frmContact" method="post" action="" enctype="multipart/form-data" onsubmit="return validateContactForm()">
 
             <div class="input-row">
                 <label style="padding-top: 20px;">Name</label> <span id="userName-info" class="info"></span><br /> <input type="text" class="input-field" name="userName" id="userName" />
