@@ -1,10 +1,13 @@
-<?php include '../header.php' ?>
+<?php 
+	//session_start();
+	//ob_start(); 
+	include '../Template/header.php' ?>
 
 <main class="container planner exercise">
 	
+	<h1>Variety of proposed exercices </h1>
+	
 	<div class="row">
-		
-		<h1>Variety of proposed exercices </h1>
 		
 		<div class="m-1 col-12 col-lg-12">
 			<p> Your Wellbeing proposes a set of set of exercises which 
@@ -231,4 +234,4 @@
 	
 </main>		
 
-<?php include '../footer.php'; ?>
+<?php include '../Template/footer.php'; ?>

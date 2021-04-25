@@ -1,10 +1,10 @@
 <?php 
-    
-    include '../header.php';
+    //session_start();
+    ob_start(); 
+    include '../Template/header.php';
     require_once '../Models/Database.php';
     require_once '../Models/Testimonials.php';
     
-    session_start();
     
     $dbcon = Database::getDb();
     $test = new Testimonial();
@@ -18,7 +18,7 @@
         $users =  $test->getUserById($_SESSION['userId'],$dbcon);
         //echo $users->id;
         // }
-    } else {
+        } else {
         header("location:../login/login.php");
     }
 ?>
@@ -51,7 +51,7 @@
         }
         
         
-        if($count){
+        if(isset($count) && $count>0){
             
             header("Location: testimonials.php");
         }
@@ -84,7 +84,7 @@
         
         <div class="form-group offset-sm-4 offset-md-5">
             <label for="user">User</label>
-            <select name="user" id="user" class="form-select">
+            <select name="user" id="user" class="form-control">
                 <?php
                     
                     //foreach ($users as $user){
@@ -96,10 +96,16 @@
                 ?>
             </select><span style="color:red;"><?= (isset($resultId) && !$resultId['bool'])?$resultId['text']:'';?></span>
         </div> 
-        
-        <input type="submit" name="addTestimonial" id="send" onclick="validateTestimonials();" class="offset-sm-4 offset-md-5 btn btn-success float-right" value="Send"/>
-        <a href="testimonials.php" class="offset-1">List of testimonials</a>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <a href="testimonials.php">List of testimonials</a>
+            </div>
+            <div class="col-12 col-sm-6">
+                <input type="submit" name="addTestimonial" id="send" onclick="validateTestimonials();" class="btn btn-success" value="Send"/>
+            </div>
+            
+        </div>
     </form>
 </main>
 
-<?php include '../footer.php'; ?>    
+<?php include '../Template/footer.php'; ?>    

@@ -1,5 +1,7 @@
 <?php 
-    include '../header.php'; 
+    //session_start();  
+    //ob_start(); 
+    include '../Template/header.php'; 
     require_once '../Models/Database.php';
     require_once '../Models/Testimonials.php';
     
@@ -44,4 +46,4 @@
     
 </main>
 
-<?php include '../footer.php'; ?>
+<?php include '../Template/footer.php'; ?>

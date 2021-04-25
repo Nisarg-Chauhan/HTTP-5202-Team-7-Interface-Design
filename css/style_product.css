@@ -1,0 +1,41 @@
+.flex {
+  display: inline-flex; /* Make products flex in row direction (default) */
+  flex-wrap: wrap; /* Make products overflow on new row */
+  justify-content: center; /* Or space-between or space-around */
+  margin: 0 -15px;
+  gap: 20%;
+}
+
+.flex > section {
+  margin: 2%;
+  flex: 1 1 0; /* Prevent the extra space around content */
+  text-align: center; /* Align text on center */
+  display: flex; /* Display as flex */
+  flex-direction: column; /* Display flex in column */
+  align-items: center; /* Align items on center */
+  padding: 15px;
+}
+
+.flex > section > p {
+  flex-grow: 1; /* Keep p's same size */
+}
+
+section > aside > ul {
+  display: flex; /* Display specs in flex-row */
+  list-style-type: none;
+  justify-content: center; /* Specs to start and end of row */
+  margin: 1%;
+}
+img {
+  width: 100%;
+}
+
+input[type="submit"] {
+  margin-top: 10%;
+  clear: both;
+  background: #424242;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px;
+}

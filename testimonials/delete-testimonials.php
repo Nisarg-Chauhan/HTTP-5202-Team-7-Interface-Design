@@ -1,10 +1,10 @@
 <?php
-    
-    include '../header.php';
+    // session_start();
+    ob_start(); 
+    include '../Template/header.php';
     require_once '../Models/Database.php';
     require_once '../Models/Testimonials.php';
     
-    session_start();
     
     $dbcon = Database::getDb();
     $test = new Testimonial();
@@ -12,7 +12,7 @@
     if(isset($_SESSION['login']) && strtolower($_SESSION['role'])=='admin'){
         
         $testimonials =  $test->getAllTestimonials($dbcon);
-    } else {
+        } else {
         header("location:../login/login.php");
     }
     
@@ -49,7 +49,7 @@
         
         <div class="form-group offset-sm-4 offset-md-5">
             <label for="testimonial">Testimonials</label>
-            <select name="testimonial" id="testimonial" class="form-select">
+            <select name="testimonial" id="testimonial" class="form-control">
                 <?php
                     //Populating the dropdown list using associative arrays
                     //Array containing all the options
@@ -62,11 +62,17 @@
                 ?>
             </select>
         </div>
-        
-        <input type="submit" id="submit" name="deleteTestimonial" onclick="confirmation();" class="offset-sm-4 offset-md-5 btn btn-danger float-right" value="Delete"/>
-        <a href="testimonials.php" class="offset-1">List of testimonials</a>
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <a href="testimonials.php" class="offset-1">List of testimonials</a>
+            </div>
+            <div class="col-sm-6">
+                <input type="submit" id="submit" name="deleteTestimonial" onclick="confirmation();" class="offset-sm-4 offset-md-5 btn btn-danger float-right" value="Delete"/>
+            </div>
+        </div>
     </form>
     
-</main>
-
-<?php include '../footer.php'; ?>        
+    </main>
+    
+            <?php include '../Template/footer.php'; ?>                    
