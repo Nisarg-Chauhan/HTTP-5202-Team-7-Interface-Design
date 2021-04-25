@@ -7,12 +7,12 @@ class Database
 {
     //Properties required for the connection to the database
 
-    // private static $userName = 'habmcs45_Diarra';    //Username
-    // private static $passWord = 'T}fLH[E!G}YY';        //Password
-    // private static $dsn = 'mysql:host=192.99.199.128; dbname=habmcs45_PHP_Project'; //Data source
-    private static $userName = 'root';    //Username
-    private static $passWord = '';        //Password
-    private static $dsn = 'mysql:host=localhost;dbname=your_wellbeing_db'; //Data source
+     private static $userName = 'habmcs45_Diarra';    //Username
+     private static $passWord = 'T}fLH[E!G}YY';        //Password
+     private static $dsn = 'mysql:host=192.99.199.128; dbname=habmcs45_PHP_Project'; //Data source
+    //private static $userName = 'root';    //Username
+    //private static $passWord = '';        //Password
+    //private static $dsn = 'mysql:host=localhost;dbname=your_wellbeing_db'; //Data source
     private static $dbcon;
 
     private function __construct()
@@ -35,7 +35,7 @@ class Database
                 self::$dbcon->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
             } catch (PDOException $e) {
                 $msg = $e->getMessage();
-                include 'custom-error.php';
+                include '../custom-error.php';
                 exit();
             }
         }

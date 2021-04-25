@@ -17,7 +17,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a href="../home.php" class="navbar-brand logo"><span style="color: #fa0202;">Your</span> Wellbeing</a>
+        <a href="../home/home.php" class="navbar-brand logo"><span style="color: #fa0202;">Your</span> Wellbeing</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,37 +38,39 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle products-lnk" data-toggle="dropdown">Products</a>
                     <div class="dropdown-menu">
-                        <a href="../Products/Products.php" class="dropdown-item">Our Products</a>
+                        <a href="../Products/products.php" class="dropdown-item">Our Products</a>
                         <a href="../Products/cart.php" class="dropdown-item">My Cart</a>
                         <a href="../Products/orders.php" class="dropdown-item">My orders</a>
                     </div>
                 </div>
-                <div class="nav-item dropdown">
+                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle info-lnk" data-toggle="dropdown">Info</a>
                     <div class="dropdown-menu">
-                        <a href="../Contact/index.php" class="dropdown-item">Contact Us</a>
-                        <?php if (isset($_SESSION['role'])) {
-                            echo '<a class="dropdown-item" href="./faq/faq-list.php">FAQ List</a>';
+                        <a href="../Contact/contact-view.php" class="dropdown-item">Contact Us</a>
+                        <?php session_start(); if (isset($_SESSION['role'])) {
+                            echo '<a href="../faq/faq-list.php" class="dropdown-item">FAQ List</a>';
+                            
                         } else {
-                            echo '<a class="dropdown-item" href="./faq/faq.php">FAQ</a>';
+                            echo '<a href="../faq/faq.php" class="dropdown-item">FAQ</a>';
+                             
                         }
-                        ?>
-                        <a href="../testimonials/testimonials.php" class="dropdown-item">Testimonials</a>
+                            ?>
+                        <a href="#" class="dropdown-item">Testimonials</a>
                         <a href="#" class="dropdown-item">Newsletter</a>
                     </div>
                 </div>
             </div>
             <div class="navbar-nav">
-                <?php
+              <?php 
                 if (isset($_SESSION['role'])) {
-                    echo '<a href="../login/user-list.php" class="nav-item nav-link">Users List</a>';
-                    echo ' <a href="../login/logout.php" class="nav-item nav-link">Sign out</a>';
-                } else {
-                    echo '<a href="../login/login.php" class="nav-item nav-link">Login</a>';
-                    echo ' <a href="../login/registration.php" class="nav-item nav-link">Register</a>';
-                }
-
-                ?>
+                            echo '<a href="../login/user-list.php" class="nav-item nav-link">Users List</a>';
+                            echo ' <a href="../login/logout.php" class="nav-item nav-link">Sign out</a>';
+                        } else {
+                            echo '<a href="../login/login.php" class="nav-item nav-link">Login</a>';
+                             echo ' <a href="../login/registration.php" class="nav-item nav-link">Register</a>';
+                        }
+                
+                            ?>
             </div>
         </div>
     </nav>

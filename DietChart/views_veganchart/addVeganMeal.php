@@ -24,7 +24,7 @@
     }
 ?>
 <?php
-    include_once "../../Template/header.php";
+    include_once "../../template/header.php";
 ?>
 <html lang="en">
     <head>  
@@ -81,5 +81,5 @@
 </html>
 
 <?php
-    include_once "../../Template/footer.php";
+    include_once "../../template/footer.php";
 ?>

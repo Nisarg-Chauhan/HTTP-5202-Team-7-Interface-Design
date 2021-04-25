@@ -40,14 +40,14 @@
                 <td><?= $allusers->role; ?></td>
                 <td>
                     <form action="./edit-user.php" method="post">
-                        <input type="hidden" name="id" value="<?= $allusers->id; ?>"/>
-                        <input type="submit" class="button btn btn-primary" name="updateUser" value="Update"/>
+                        <input type="hidden" name="id" value="<?= $allusers->id; ?>">
+                        <input type="submit" class="button btn btn-primary" name="updateUser" value="Update">
                     </form>
                 </td>
                 <td>
                     <form action="./delete-user.php" method="post">
-                        <input type="hidden" name="id" value="<?=  $allusers->id; ?>"/>
-                        <input type="submit" class="button btn btn-danger" name="deleteUser" value="Delete"/>
+                        <input type="hidden" name="id" value="<?=  $allusers->id; ?>">
+                        <input type="submit" class="button btn btn-danger" name="deleteUser" value="Delete">
                     </form>
                 </td>
             </tr>

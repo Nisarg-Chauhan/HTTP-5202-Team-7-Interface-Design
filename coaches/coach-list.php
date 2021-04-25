@@ -1,5 +1,5 @@
 <?php 
-    include '../Template/header.php'; 
+    include '../template/header.php'; 
     require_once '../Models/Database.php';
     require_once '../Models/Coaches.php';
     
@@ -54,4 +54,4 @@
 	
 </main>		
 
-<?php include '../Template/footer.php'; ?>
+<?php include '../template/footer.php'; ?>

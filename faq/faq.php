@@ -9,9 +9,11 @@
     $faqs =  $blog->getAllFaqs($dbcon);
     
 ?>
-<main class="container planner">
+
+<link rel="stylesheet" type="text/css" href="../css/faq.css">
+<div style="height:700px;" class="container planner">
 <h2>Frequently Asked Questions</h2>
-<section class="faq-block" id="faq-main" >
+<section class="faq-block" id="faq-main">
    <div class="container">
       <?php 
         print '<dl class="mylist">';
@@ -26,6 +28,6 @@
        ?>
    </div>
 </section>
-</main>
+</div>
 
 <?php include '../template/footer.php'; ?>

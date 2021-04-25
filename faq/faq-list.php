@@ -1,6 +1,6 @@
 <?php 
-session_start();
-    include '../template/header.php'; 
+
+    include './template/header.php'; 
     require_once '../Models/Database.php';
     require_once '../Models/faq_db.php';
     
@@ -31,19 +31,19 @@ session_start();
         <tbody>
          <?php foreach ($new as $news) { ?>
             <tr>
-                <th style= "text-align:center;"><?= $news->id; ?></th>
+                <th style="text-align:center;"><?= $news->id; ?></th>
                 <td><?= $news->question; ?></td>
                 <td><?= $news->answer; ?></td>                
                 <td>
                     <form action="./edit-faq.php" method="post">
-                        <input type="hidden" name="id" value="<?= $news->id; ?>"/>
-                        <input type="submit" class="button btn btn-primary" name="updateFaq" value="Update"/>
+                        <input type="hidden" name="id" value="<?= $news->id; ?>">
+                        <input type="submit" class="button btn btn-primary" name="updateFaq" value="Update">
                     </form>
                 </td>
                 <td>
                     <form action="./delete-faq.php" method="post">
-                        <input type="hidden" name="id" value="<?=  $news->id; ?>"/>
-                        <input type="submit" class="button btn btn-danger" name="deleteUser" value="Delete"/>
+                        <input type="hidden" name="id" value="<?=  $news->id; ?>">
+                        <input type="submit" class="button btn btn-danger" name="deleteUser" value="Delete">
                     </form>
                 </td>
             </tr>
@@ -53,4 +53,4 @@ session_start();
     <a href="./add-faq.php" id="btn_addFaq" class="btn btn-success btn-lg float-right">Add FAQ</a>
 </main>		
 
-<?php include '../template/footer.php'; ?>
+<?php include './template/footer.php'; ?>

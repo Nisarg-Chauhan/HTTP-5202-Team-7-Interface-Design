@@ -25,15 +25,15 @@ if(isset($_POST['addFaq'])){
 
 ?>
 
-<html lang="en">
 
 
-<body style="background-color:white;">
+
+
 
 <div>
    
     <form action="" method="post">
-        <input type="hidden" name="sid" value="" />
+        <input type="hidden" name="sid" value="">
         <div class="form-group">
             <label for="question">Topic :</label>
             <input type="text" class="form-control" name="question" id="question" value=""
@@ -51,5 +51,5 @@ if(isset($_POST['addFaq'])){
         </button>
     </form>
 </div>
-</body>
+
    <?php include '../template/footer.php'; ?>
