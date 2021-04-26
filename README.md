@@ -8,9 +8,18 @@ http://yourwellbeing.safarov.ca/home/home.php
 # Team
 # Nodir Safarov
 ### Features
+  #### Login & Registration 
+  - [x] Login and registration features allowing users to register and login to the web page
+  #### FAQ
+  - [x] FAQ feature for user and admin. Admin page has a CRUD functionality.
+   #### BMI calcutor
+  - [x] Simple BMI Calculation feature to get your BMI data
 
 ### Learning curve and challenges
+  - [x] Learned to create session and use Session variables to set the "client" and "admin" roles
+  - [x] Learned work with a hosting sql and whole website
 ### Resources
+- [x] Course video materials, github resources, php.net
 
 # Kunal Sailor
 ### Features
