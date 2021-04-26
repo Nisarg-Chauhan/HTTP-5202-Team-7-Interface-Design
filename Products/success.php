@@ -4,6 +4,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
   session_start();
 }
 include '../template/header.php';
+
 ?>
 
 
@@ -15,13 +16,14 @@ include '../template/header.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Wellbeing</title>
   <link rel="stylesheet" href="../css/foundation.css" />
+  <link rel="stylesheet" href="../css/style_footer.css" />
   <script src="../js/vendor/modernizr.js"></script>
 </head>
 
 <body>
   <div class="row" style="margin-top:10px;">
     <div class="small-12">
-      <p>Your order has been Successfully Placed!</p>
+      <h1>Your order has been placed successfully!</h1>
     </div>
   </div>
   <script src="../js/vendor/jquery.js"></script>

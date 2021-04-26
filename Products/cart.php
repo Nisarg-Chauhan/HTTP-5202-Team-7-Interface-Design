@@ -16,6 +16,7 @@ include '../template/header.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shopping Cart || Your Wellbeing</title>
   <link rel="stylesheet" href="../css/foundation.css" />
+  <link rel="stylesheet" href="../css/style_footer.css" />
   <script src="../js/vendor/modernizr.js"></script>
 </head>
 
@@ -69,7 +70,6 @@ include '../template/header.php';
         echo '<tr>';
         echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a>&nbsp;<a href="products.php" class="button [secondary success alert]">Continue Shopping</a>';
         if (isset($_SESSION['login'])) {
-          //echo '<a href="orders-update.php"><button style="float:right;">COD</button></a>';
           echo '<div style="float:right;" id="paypal-payment-button">';
         } else {
           echo '<a href="login2.php"><button style="float:right;">Login</button></a>';
