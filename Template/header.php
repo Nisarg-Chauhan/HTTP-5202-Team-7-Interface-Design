@@ -47,7 +47,7 @@
                     <a href="#" class="nav-link dropdown-toggle info-lnk" data-toggle="dropdown">Info</a>
                     <div class="dropdown-menu">
                         <a href="../Contact/contact-view.php" class="dropdown-item">Contact Us</a>
-                        <?php session_start();
+                        <?php
                         if (isset($_SESSION['role'])) {
                             echo '<a href="../faq/faq-list.php" class="dropdown-item">FAQ List</a>';
                         } else {
