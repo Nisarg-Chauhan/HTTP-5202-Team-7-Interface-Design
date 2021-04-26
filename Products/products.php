@@ -8,9 +8,11 @@ include '../template/header.php';
 require_once '../Models/Database.php';
 require_once '../Models/Products.php';
 
-
+//Connect the database
 $dbcon = Database::getDb();
 $product = new Product();
+
+//Fet all the products
 $products =  $product->getAllProducts($dbcon);
 ?>
 
@@ -33,16 +35,16 @@ $products =  $product->getAllProducts($dbcon);
     <?php
     $product_id = array();
     $product_quantity = array();
+
+    //Display all the products in a grid
     foreach ($products as $product) {
 
       echo '<section>';
 
-      //echo '<div class="item">';
       echo '<div class="img-container">';
       echo '<img src="../images/products/' . $product->product_img_name . '"/>';
       echo '</div>';
 
-      //echo '<div class="product-info">';
       echo '<p><h3>' . $product->product_name . '</h3></p>';
       echo '<p><strong>Product Code</strong>: ' . $product->product_code . '</p>';
       echo '<p><strong>Description</strong>: ' . $product->product_desc . '</p>';
@@ -52,9 +54,6 @@ $products =  $product->getAllProducts($dbcon);
       echo '<li><strong>Units</strong>: ' . $product->qty . '</li>';
       echo '<li><strong>Price </strong>: $' . $product->price . '</li>';
       echo '</ul>';
-
-      //echo '</div>';
-
       if ($product->qty > 0) {
         echo '<p><a href="update-cart.php?action=add&id=' . $product->id . '"><input type="submit" value="Add To Cart"  /></a></p>';
       } else {

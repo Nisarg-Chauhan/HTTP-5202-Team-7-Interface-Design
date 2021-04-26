@@ -5,6 +5,7 @@
 <head>
     <title>Contact Us Form</title>
     <link rel="stylesheet" type="text/css" href="../css/style_contact.css" />
+
 </head>
 
 <body>

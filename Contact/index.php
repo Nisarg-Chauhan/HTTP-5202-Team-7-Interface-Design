@@ -4,6 +4,7 @@ require_once '../Models/Database.php';
 require_once '../Models/Contact.php';
 
 
+
 $dbcon = Database::getDb();
 $contact = new Contact();
 
