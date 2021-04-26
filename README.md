@@ -39,8 +39,8 @@
 #### The major challenge for me was to implement a shopping cart and keeping track of the quantity of items. Another thing which was hard for me was to integrate my features with other and to resolve github conflicts. Overall, it was a good learning experience. My PHP skills have certainly improved from this project! 
 
 ### Resources
-Youtube: https://www.youtube.com/watch?v=KLWA2vCERSQ&t=15509s
-Github Repo : https://github.com/2021-Winter-HTTP-5202-A/Class-Samples/tree/master/studentpdo
+#### Youtube: https://www.youtube.com/watch?v=KLWA2vCERSQ&t=15509s
+#### Github Repo : https://github.com/2021-Winter-HTTP-5202-A/Class-Samples/tree/master/studentpdo
 
 
 
