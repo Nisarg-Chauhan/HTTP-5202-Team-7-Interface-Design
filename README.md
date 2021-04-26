@@ -1,22 +1,22 @@
 # HTTP-5202-Team-7-Your-Wellbeing-Project-
-##TEAM 7 - PHP Explorers
+#TEAM 7 - PHP Explorers
 
-##Nodir Safarov
+#Nodir Safarov
 ### Features
 ### Learning curve and challenges
 ### Resources
 
-##Kunal Sailor
+#Kunal Sailor
 ### Features
 ### Learning curve and challenges
 ### Resources
 
-##Bakary Diarra 
+#Bakary Diarra 
 ### Features
 ### Learning curve and challenges
 ### Resources
 
-##Nisarg Chauhan
+#Nisarg Chauhan
 ### Features
 ### Learning curve and challenges
 ### Resources
