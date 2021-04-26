@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Template"
   ],
-  "SelectedNode": "\\header.php",
+  "SelectedNode": "\\Template\\header.php",
   "PreviewInSolutionExplorer": false
 }

@@ -1,6 +1,6 @@
 <?php 
 
-include '../Template/header.php';
+require_once '../template/header.php';
 
 require_once '../Models/Database.php';
 require_once '../Models/users.php';
@@ -54,7 +54,7 @@ if(isset($_POST['submit']))
 
 <link rel="stylesheet" href="../css/bmi.css" type="text/css">
 
-<main class="container">
+<main style="height:700px; class="container">
     <div class="text_area">
     <h3>How to calculate Body Mass Index</h3>
     
@@ -93,4 +93,4 @@ if(isset($_POST['submit']))
     </div>
 </main>
 
-<?php include '../Template/footer.php'  ?>
+<?php require_once '../template/footer.php'  ?>

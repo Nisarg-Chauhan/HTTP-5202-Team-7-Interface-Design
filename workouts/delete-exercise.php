@@ -1,7 +1,7 @@
 <?php
     //session_start();
 	ob_start(); 
-    include '../Template/header.php';
+    include '../template/header.php';
     require_once '../Models/Database.php';
     require_once '../Models/Exercises.php';
 	
@@ -69,4 +69,4 @@
      
 </main>
 
-<?php include '../Template/footer.php'; ?>
+<?php include '../template/footer.php'; ?>

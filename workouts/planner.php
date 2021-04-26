@@ -1,7 +1,7 @@
 <?php 
 	//session_start();
 	//ob_start(); 
-	include '../Template/header.php' ?>
+	include '../template/header.php' ?>
 
 <main class="container planner exercise">
 	
@@ -234,4 +234,4 @@
 	
 </main>		
 
-<?php include '../Template/footer.php'; ?>
+<?php include '../template/footer.php'; ?>
