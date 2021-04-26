@@ -15,20 +15,20 @@
 
 # Bakary Diarra 
 ### Features
-  # Testimonials
+  #### Testimonials
     - [x] Fully dynamic  and allows any logged in user can leave a message to describe his experience with YourWellbeing
-  # Coaches 
+  #### Coaches 
     - [x] Fully dynamic list a coach helping the customer to choose the best programme depending on their needs.
-  # Exercise planner
-    - [x] A dynamic exercise planning interface helping customers to manage their fitness and to evaluate the amount of calories when can burning in a particular plan. Plans are proposed for 4 weeks long.
-    - [x] All these features have create, read, update and delete functionalities and they present both user and admin interfaces.
+  #### Exercise planner
+   - [x] A dynamic exercise planning interface helping customers to manage their fitness and to evaluate the amount of calories when can burning in a particular plan. Plans are proposed for 4 weeks long.
+   - [x] All these features have create, read, update and delete functionalities and they present both user and admin interfaces.
    
 ### Learning curve and challenges
-    - [x] The most challenging was to create the weekly planner with various exercises chosen by the customer itself.
-    - [x] This project allows me to put in pratice all the major rules of PHP used in an industrial domain
+   - [x] The most challenging was to create the weekly planner with various exercises chosen by the customer itself.
+   - [x] This project allows me to put in pratice all the major rules of PHP used in an industrial domain
 ### Resources
-    - [x] Books recommended by the professor
-    - [x] Lectures notes and github samples
+   - [x] Books recommended by the professor
+   - [x] Lectures notes and github samples
 
 # Nisarg Chauhan
 ### Features
