@@ -2,6 +2,10 @@
 
 # TEAM 7 - PHP Explorers
 
+#Check out our website here
+http://yourwellbeing.safarov.ca/home/home.php
+
+#Team
 # Nodir Safarov
 ### Features
 
