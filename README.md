@@ -15,14 +15,14 @@ http://yourwellbeing.safarov.ca/home/home.php
 # Kunal Sailor
 ### Features
 #### Homepage
--[x] A nice responsive Homepage layout with drop down naviagtion links.
+- [x] A nice responsive Homepage layout with drop down naviagtion links.
 #### About Us
--[x] A short but informative about us section fully responsive with a link to Contact Us page.
+- [x] A short but informative about us section fully responsive with a link to Contact Us page.
 #### Newsletter
--[x] A dynamic newsletter feature that is fully functional and robust.
--[x] It uses PhpMailer for creating bulk emails and sending it to the users.
--[x] It takes the input from the users and send them emails regarding their subscription for the website.
--[x] It prompts the user with a success message too.
+- [x] A dynamic newsletter feature that is fully functional and robust.
+- [x] It uses PhpMailer for creating bulk emails and sending it to the users.
+- [x] It takes the input from the users and send them emails regarding their subscription for the website.
+- [x] It prompts the user with a success message too.
 #### Diet Planner
 -[x] A dynmaic Diet Planner feature containing three of the most trending diet plans in the world currently.
 -[x] It contains CRUD functionality.
