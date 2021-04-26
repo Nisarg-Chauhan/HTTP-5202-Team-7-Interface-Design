@@ -24,8 +24,8 @@ http://yourwellbeing.safarov.ca/home/home.php
 - [x] It takes the input from the users and send them emails regarding their subscription for the website.
 - [x] It prompts the user with a success message too.
 #### Diet Planner
--[x] A dynmaic Diet Planner feature containing three of the most trending diet plans in the world currently.
--[x] It contains CRUD functionality.
+- [x] A dynmaic Diet Planner feature containing three of the most trending diet plans in the world currently.
+- [x] It contains CRUD functionality.
 
 
 ### Learning curve and challenges
