@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <h1>Contact Us</h1>
     <div class="form-container">
         <form name="frmContact" id="frmContact" method="post" action="" enctype="multipart/form-data" onsubmit="return validateContactForm()">
 

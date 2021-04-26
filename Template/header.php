@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="../home/home.php" class="nav-item nav-link active home-lnk">Home</a>
-                <a href="#" class="nav-item nav-link about-lnk">About</a>
+                <a href="../home/home.php" class="nav-item nav-link about-lnk">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle planner-lnk" data-toggle="dropdown">Planner</a>
                     <div class="dropdown-menu">
