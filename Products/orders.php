@@ -6,7 +6,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
 
 if (!isset($_SESSION["login"])) {
-  header("location:index.php");
+  header("location:../login/login.php");
 }
 include '../template/header.php';
 include 'config.php';
@@ -47,10 +47,6 @@ include 'config.php';
           echo '<p><strong>Price Per Unit</strong>: ' . $obj->price . '</p>';
           echo '<p><strong>Units Bought</strong>: ' . $obj->units . '</p>';
           echo '<p><strong>Total Cost</strong>: ' . $currency . $obj->total . '</p>';
-          //echo '</div>';
-          //echo '<div class="large-6">';
-          //echo '<img src="images/products/sports_band.jpg">';
-          //echo '</div>';
           echo '<p><hr></p>';
         }
       }
