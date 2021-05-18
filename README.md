@@ -1,4 +1,4 @@
-# HTTP-5202-Team-7-Your-Wellbeing-Project-
+# HTTP-5202-Team-7-Your-Wellbeing-Project
 
 # TEAM 7 - PHP Explorers
 
